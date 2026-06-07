@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPF Advocacia — Parceria para Corretores</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --azul: #004A95; --azul-escuro: #002F5F; --azul-claro: #E8F0FA;
+  --dourado: #C9A84C; --off-white: #F7F5F0;
+  --cinza: #6B7280; --cinza-claro: #E2E2E2; --texto: #1C1C1E; --branco: #FFFFFF;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Lato', sans-serif; background: var(--off-white); color: var(--texto); font-size: 16px; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 60px; display: flex; align-items: center; justify-content: space-between; background: rgba(0,47,95,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201,168,76,0.25); }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--branco); text-decoration: none; }
+.nav-logo span { color: var(--dourado); }
+.nav-back { font-size: 0.78rem; color: rgba(255,255,255,0.5); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
+.nav-back:hover { color: var(--dourado); }
+
+.page-hero { background: var(--azul-escuro); padding: 130px 60px 70px; text-align: center; position: relative; overflow: hidden; }
+.page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px); background-size: 60px 60px; }
+.page-hero-tag { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dourado); margin-bottom: 16px; position: relative; }
+.page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; color: var(--branco); line-height: 1.2; position: relative; max-width: 700px; margin: 0 auto 16px; }
+.page-hero p { font-size: 1rem; color: rgba(255,255,255,0.55); font-weight: 300; position: relative; max-width: 580px; margin: 0 auto; line-height: 1.7; }
+
+.proposta-section { max-width: 1200px; margin: 0 auto; padding: 64px 40px 40px; }
+
+.proposta-frase {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--azul-escuro);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 56px;
+  line-height: 1.5;
+}
+
+.modelos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+.modelo-card { background: var(--branco); border: 1px solid var(--cinza-claro); border-top: 4px solid var(--dourado); border-radius: 4px; padding: 36px 32px; }
+.modelo-card:hover { box-shadow: 0 8px 32px rgba(0,47,95,0.08); }
+
+.modelo-tag { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dourado); font-weight: 700; margin-bottom: 12px; }
+.modelo-nome { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 500; color: var(--azul-escuro); margin-bottom: 10px; }
+.modelo-desc { font-size: 0.88rem; color: var(--cinza); line-height: 1.7; font-weight: 300; margin-bottom: 20px; }
+
+.modelo-inclui { list-style: none; border-top: 1px solid var(--cinza-claro); padding-top: 16px; }
+.modelo-inclui li { font-size: 0.85rem; color: var(--cinza); padding: 6px 0; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; font-weight: 300; }
+.modelo-inclui li::before { content: '✓'; color: var(--dourado); flex-shrink: 0; font-weight: 700; margin-top: 1px; }
+
+/* FORM */
+.form-section { background: var(--azul-escuro); padding: 80px 40px; }
+.form-container { max-width: 760px; margin: 0 auto; }
+.form-header { text-align: center; margin-bottom: 48px; }
+.form-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--branco); margin-bottom: 10px; }
+.form-header p { font-size: 0.9rem; color: rgba(255,255,255,0.5); font-weight: 300; }
+.form-card { background: var(--branco); border-radius: 4px; padding: 48px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+
+.section-label { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--azul); font-weight: 700; margin-bottom: 18px; margin-top: 28px; display: flex; align-items: center; gap: 10px; }
+.section-label:first-child { margin-top: 0; }
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--cinza-claro); }
+
+.field { margin-bottom: 18px; }
+.field label { display: block; font-size: 0.82rem; color: var(--cinza); margin-bottom: 7px; font-weight: 400; }
+.field input, .field select, .field textarea { width: 100%; padding: 12px 16px; border: 1.5px solid var(--cinza-claro); background: var(--off-white); font-family: 'Lato', sans-serif; font-size: 0.9rem; color: var(--texto); border-radius: 3px; transition: border-color 0.2s; outline: none; appearance: none; }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--azul); background: var(--branco); }
+.field textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+.field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23004A95' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; cursor: pointer; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.radio-group { display: flex; flex-wrap: wrap; gap: 10px; }
+.radio-opt { display: flex; align-items: center; gap: 9px; padding: 9px 16px; border: 1.5px solid var(--cinza-claro); border-radius: 3px; cursor: pointer; transition: all 0.2s; background: var(--off-white); }
+.radio-opt:hover { border-color: var(--azul); }
+.radio-opt input { accent-color: var(--azul); width: auto; padding: 0; border: none; background: none; }
+.radio-opt span { font-size: 0.82rem; color: var(--texto); font-weight: 400; }
+.radio-opt:has(input:checked) { border-color: var(--azul); background: #E8F0FA; }
+.radio-opt:has(input:checked) span { color: var(--azul); font-weight: 700; }
+
+.privacy-txt { font-size: 0.75rem; color: var(--cinza); line-height: 1.7; margin: 24px 0 20px; padding-top: 20px; border-top: 1px solid var(--cinza-claro); }
+.btn-enviar { width: 100%; padding: 17px; background: var(--azul-escuro); color: var(--branco); border: none; font-family: 'Lato', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; border-radius: 3px; border-bottom: 3px solid var(--dourado); transition: background 0.2s; }
+.btn-enviar:hover { background: var(--azul); }
+
+.success-box { display: none; text-align: center; padding: 60px 40px; background: var(--branco); border-radius: 4px; }
+.success-box.show { display: block; }
+.success-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--azul-escuro); margin: 16px 0 10px; }
+.success-box p { font-size: 0.9rem; color: var(--cinza); line-height: 1.8; font-weight: 300; }
+
+footer { background: var(--azul-escuro); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(201,168,76,0.2); }
+footer p { font-size: 0.72rem; color: rgba(255,255,255,0.25); letter-spacing: 0.04em; }
+footer a { font-size: 0.72rem; color: rgba(255,255,255,0.3); text-decoration: none; }
+footer a:hover { color: var(--dourado); }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .page-hero { padding: 100px 20px 50px; }
+  .proposta-section { padding: 40px 20px; }
+  .modelos-grid { grid-template-columns: 1fr; }
+  .form-section { padding: 60px 20px; }
+  .form-card { padding: 28px 20px; }
+  .grid-2 { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 10px; padding: 24px 20px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">MPF <span>Advocacia</span></a>
+  <a class="nav-back" href="index.html">← Voltar</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-tag">Para Corretores Autônomos</div>
+  <h1>Feche mais negócios.<br>Deixa a parte jurídica com a gente.</h1>
+  <p>Suporte jurídico especializado para corretores que trabalham fora de imobiliária — por operação ou em parceria mensal recorrente.</p>
+</div>
+
+<div class="proposta-section">
+  <p class="proposta-frase">"Corretor que entrega segurança jurídica ao cliente fecha mais rápido, tem menos problema e recebe indicação."</p>
+
+  <div class="modelos-grid">
+    <div class="modelo-card">
+      <div class="modelo-tag">Modelo 01</div>
+      <div class="modelo-nome">Suporte por Operação</div>
+      <div class="modelo-desc">Para o corretor que está fechando uma venda e precisa de respaldo jurídico pontual para passar segurança ao cliente.</div>
+      <ul class="modelo-inclui">
+        <li>Análise da matrícula do imóvel</li>
+        <li>Análise do contrato de compra e venda</li>
+        <li>Parecer escrito para apresentar ao cliente</li>
+        <li>Orientação direta ao corretor sobre pontos críticos</li>
+        <li>Prazo: 2 dias úteis</li>
+      </ul>
+    </div>
+    <div class="modelo-card">
+      <div class="modelo-tag">Modelo 02</div>
+      <div class="modelo-nome">Parceria Mensal Recorrente</div>
+      <div class="modelo-desc">Para o corretor que fecha várias operações por mês e quer um advogado de referência disponível.</div>
+      <ul class="modelo-inclui">
+        <li>Suporte jurídico em todas as operações do mês</li>
+        <li>Análise de matrículas e contratos</li>
+        <li>Disponibilidade para dúvidas por WhatsApp</li>
+        <li>Parecer por operação quando necessário</li>
+        <li>Honorários por pacote mensal — a definir conforme volume</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="form-section" id="contato">
+  <div class="form-container">
+    <div class="form-header">
+      <h2>Vamos conversar</h2>
+      <p>Preencha o formulário. Entraremos em contato em até 24 horas úteis.</p>
+    </div>
+
+    <div class="form-card" id="form-wrapper">
+      <form action="https://formspree.io/f/xkoaoljq" method="POST">
+        <input type="hidden" name="perfil" value="Corretor Autônomo">
+
+        <div class="section-label">Dados profissionais</div>
+        <div class="grid-2">
+          <div class="field"><label>Nome completo <span style="color:#C9A84C">*</span></label><input type="text" name="nome" placeholder="Nome completo" required></div>
+          <div class="field"><label>CRECI</label><input type="text" name="creci" placeholder="Nº do CRECI (se possuir)"></div>
+        </div>
+        <div class="grid-2">
+          <div class="field"><label>WhatsApp profissional <span style="color:#C9A84C">*</span></label><input type="tel" name="whatsapp" placeholder="(00) 00000-0000" required></div>
+          <div class="field"><label>E-mail <span style="color:#C9A84C">*</span></label><input type="email" name="email" placeholder="seu@email.com" required></div>
+        </div>
+        <div class="field"><label>Região de atuação principal <span style="color:#C9A84C">*</span></label><input type="text" name="regiao_atuacao" placeholder="Ex.: Zona Sul SP, ABC, Campinas..." required></div>
+
+        <div class="section-label">Seu volume de trabalho</div>
+        <div class="field">
+          <label>Operações fechadas por mês (média)</label>
+          <div class="radio-group">
+            <label class="radio-opt"><input type="radio" name="volume_mensal" value="1 operação"><span>1</span></label>
+            <label class="radio-opt"><input type="radio" name="volume_mensal" value="2 a 3"><span>2 a 3</span></label>
+            <label class="radio-opt"><input type="radio" name="volume_mensal" value="4 a 6"><span>4 a 6</span></label>
+            <label class="radio-opt"><input type="radio" name="volume_mensal" value="7 ou mais"><span>7 ou mais</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Ticket médio das operações</label>
+          <select name="ticket_medio">
+            <option value="">Selecione</option>
+            <option>Até R$ 300.000</option>
+            <option>R$ 300.001 a R$ 600.000</option>
+            <option>R$ 600.001 a R$ 1.000.000</option>
+            <option>Acima de R$ 1.000.000</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Modelo de parceria preferido</label>
+          <div class="radio-group">
+            <label class="radio-opt"><input type="radio" name="modelo_parceria" value="Pontual por operação"><span>Pontual por operação</span></label>
+            <label class="radio-opt"><input type="radio" name="modelo_parceria" value="Parceria mensal"><span>Parceria mensal</span></label>
+            <label class="radio-opt"><input type="radio" name="modelo_parceria" value="Quero entender as opções"><span>Quero entender as opções</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Descreva uma situação recente em que sentiu falta de suporte jurídico (opcional)</label>
+          <textarea name="descricao_situacao" placeholder="Quanto mais detalhes, melhor conseguimos preparar nossa conversa..."></textarea>
+        </div>
+        <div class="field">
+          <label>Como chegou até nós?</label>
+          <select name="origem">
+            <option value="">Selecione</option>
+            <option>Indicação de outro corretor</option>
+            <option>Indicação de cliente</option>
+            <option>Google</option>
+            <option>Instagram</option>
+            <option>Outro</option>
+          </select>
+        </div>
+
+        <p class="privacy-txt">As informações fornecidas destinam-se exclusivamente à triagem do atendimento. Nenhum dado é compartilhado com terceiros. O preenchimento deste formulário não implica contratação de serviços advocatícios nem estabelece relação advogado-cliente.</p>
+        <button type="submit" class="btn-enviar">Enviar solicitação de contato</button>
+      </form>
+    </div>
+
+    <div class="success-box" id="form-success">
+      <div style="font-size:2.5rem">✓</div>
+      <h3>Solicitação recebida</h3>
+      <p>Entraremos em contato em até 24 horas úteis.<br>Vamos conversar sobre como estruturar a melhor parceria para o seu volume.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 MPF Advocacia · OAB/SP nº 339.290</p>
+  <a href="index.html">← Página inicial</a>
+</footer>
+
+</body>
+</html>

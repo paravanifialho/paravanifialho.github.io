@@ -3,155 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Assessoria jurídica especializada em compra, venda e locação de imóveis em São Paulo. Atendimento 100% online para compradores, vendedores e corretores autônomos.">
-<meta name="keywords" content="advogado imobiliário São Paulo, análise contrato compra imóvel, assessoria jurídica imobiliária online, advogado compra imóvel SP">
-<title>Paravani Fialho Advocacia — Segurança Jurídica em Operações Imobiliárias</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<meta name="description" content="MPF Advocacia — Assessoria jurídica especializada em imóveis em São Paulo. Compra, venda, regularização e suporte a corretores. 100% online.">
+<title>MPF Advocacia — Direito Imobiliário em São Paulo</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --azul: #004A95;
   --azul-escuro: #002F5F;
-  --azul-medio: #0A5AA8;
   --dourado: #C9A84C;
   --dourado-claro: #E8D5A3;
   --off-white: #F7F5F0;
   --cinza: #6B7280;
-  --cinza-claro: #E8E8E8;
+  --cinza-claro: #E2E2E2;
   --texto: #1C1C1E;
   --branco: #FFFFFF;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'DM Mono', monospace;
-  background: var(--off-white);
-  color: var(--texto);
+  font-family: 'Lato', sans-serif;
+  background: var(--azul-escuro);
+  color: var(--branco);
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* ─── NAV ─── */
+/* GRID BG */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* NAV */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  padding: 20px 60px;
+  padding: 22px 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(0,47,95,0.97);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(201,168,76,0.3);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  background: rgba(0,47,95,0.95);
+  backdrop-filter: blur(10px);
 }
 
 .nav-logo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: var(--branco);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   text-decoration: none;
 }
 
-.nav-logo span {
-  color: var(--dourado);
+.nav-logo span { color: var(--dourado); }
+
+.nav-oab {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.08em;
 }
 
-.nav-links {
-  display: flex;
-  gap: 36px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.65);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover { color: var(--dourado); }
-
-.nav-cta {
-  padding: 9px 22px;
-  background: var(--dourado);
-  color: var(--azul-escuro) !important;
-  font-weight: 500 !important;
-  border-radius: 2px;
-}
-
-.nav-cta:hover { background: var(--dourado-claro) !important; color: var(--azul-escuro) !important; }
-
-/* ─── HERO ─── */
+/* HERO */
 .hero {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
-  background: var(--azul-escuro);
-  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  overflow: hidden;
-  padding: 120px 60px 80px;
-}
-
-.hero-grid-bg {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
-.hero-glow {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(0,74,149,0.4) 0%, transparent 70%);
-  top: -100px;
-  right: -100px;
-  pointer-events: none;
-}
-
-.hero-content {
-  position: relative;
-  max-width: 760px;
-  animation: heroIn 0.9s ease both;
-}
-
-@keyframes heroIn {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+  justify-content: center;
+  text-align: center;
+  padding: 120px 40px 80px;
 }
 
 .hero-eyebrow {
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--dourado);
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.hero-eyebrow::before {
-  content: '';
-  width: 32px;
-  height: 1px;
-  background: var(--dourado);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.2s forwards;
 }
 
 .hero h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
   font-weight: 300;
+  line-height: 1.1;
   color: var(--branco);
-  line-height: 1.12;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
+  max-width: 900px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.4s forwards;
 }
 
 .hero h1 em {
@@ -159,1358 +113,193 @@ nav {
   color: var(--dourado);
 }
 
-.hero-sub {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.9;
-  max-width: 520px;
-  margin-bottom: 48px;
-  letter-spacing: 0.02em;
+.hero-frases {
+  margin: 36px auto;
+  max-width: 720px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.6s forwards;
 }
 
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
+.frase {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.btn-primary {
-  padding: 15px 32px;
-  background: var(--dourado);
-  color: var(--azul-escuro);
-  font-family: 'DM Mono', monospace;
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 2px;
-  border-bottom: 3px solid rgba(0,0,0,0.2);
-  transition: all 0.2s ease;
-  display: inline-block;
-}
+.frase:last-child { border-bottom: none; }
 
-.btn-primary:hover {
-  background: var(--dourado-claro);
-  transform: translateY(-1px);
-}
-
-.btn-ghost {
-  padding: 15px 32px;
-  border: 1.5px solid rgba(255,255,255,0.25);
-  color: rgba(255,255,255,0.75);
-  font-family: 'DM Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: all 0.2s ease;
-  display: inline-block;
-}
-
-.btn-ghost:hover {
-  border-color: var(--dourado);
-  color: var(--dourado);
-}
-
-.hero-stat-strip {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: rgba(0,0,0,0.2);
-  border-top: 1px solid rgba(201,168,76,0.2);
-  padding: 20px 60px;
-  display: flex;
-  gap: 60px;
-  animation: heroIn 1.1s ease both;
-}
-
-.hero-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.hero-stat strong {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
+.frase strong {
+  color: rgba(255,255,255,0.9);
   font-weight: 400;
-  color: var(--dourado);
 }
 
-.hero-stat span {
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
-}
-
-/* ─── SECTION BASE ─── */
-section {
-  padding: 100px 60px;
-}
-
-.section-tag {
-  font-size: 0.58rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--dourado);
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.section-tag::before {
-  content: '';
-  width: 24px;
-  height: 1px;
-  background: var(--dourado);
-}
-
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  font-weight: 400;
-  color: var(--azul-escuro);
-  line-height: 1.2;
-  margin-bottom: 16px;
-}
-
-.section-title em { font-style: italic; color: var(--azul); }
-
-.section-desc {
-  font-size: 0.74rem;
-  color: var(--cinza);
-  line-height: 1.9;
-  max-width: 560px;
-  letter-spacing: 0.02em;
-}
-
-/* ─── PROBLEMA ─── */
-.problema {
-  background: var(--branco);
+/* BOTÕES DE PERFIL */
+.perfis {
+  margin-top: 52px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 800px;
+  width: 100%;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.8s forwards;
 }
 
-.problema-visual {
-  position: relative;
+.perfil-card {
+  display: block;
+  padding: 28px 24px;
+  background: rgba(255,255,255,0.04);
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  text-align: left;
+  cursor: pointer;
 }
 
-.problema-card-stack {
-  position: relative;
-  height: 320px;
+.perfil-card:hover {
+  background: rgba(201,168,76,0.1);
+  border-color: var(--dourado);
+  transform: translateY(-2px);
 }
 
-.risco-card {
-  position: absolute;
-  background: var(--off-white);
-  border: 1px solid var(--cinza-claro);
-  border-left: 4px solid var(--dourado);
-  padding: 20px 24px;
-  border-radius: 3px;
-  width: 88%;
+.perfil-card .icon {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 14px;
 }
 
-.risco-card:nth-child(1) { top: 0; left: 0; transform: rotate(-1.5deg); }
-.risco-card:nth-child(2) { top: 80px; left: 20px; transform: rotate(0.8deg); background: var(--branco); box-shadow: 0 4px 20px rgba(0,47,95,0.08); }
-.risco-card:nth-child(3) { top: 168px; left: 8px; transform: rotate(-0.5deg); }
-
-.risco-card .risco-titulo {
-  font-size: 0.65rem;
+.perfil-card .titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
   font-weight: 500;
-  color: var(--azul-escuro);
-  letter-spacing: 0.05em;
+  color: var(--branco);
   margin-bottom: 6px;
 }
 
-.risco-card .risco-desc {
-  font-size: 0.62rem;
-  color: var(--cinza);
-  line-height: 1.7;
+.perfil-card .desc {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+  font-weight: 300;
 }
 
-.problema-lista {
-  list-style: none;
-  margin-top: 32px;
-}
-
-.problema-lista li {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--cinza-claro);
-  font-size: 0.72rem;
-  color: var(--cinza);
-  line-height: 1.7;
-}
-
-.problema-lista li::before {
-  content: '→';
-  color: var(--dourado);
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-/* ─── SERVIÇOS ─── */
-.servicos {
-  background: var(--azul-escuro);
-  position: relative;
-  overflow: hidden;
-}
-
-.servicos::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-
-.servicos .section-title { color: var(--branco); position: relative; }
-.servicos .section-desc { color: rgba(255,255,255,0.5); position: relative; }
-.servicos .section-tag { position: relative; }
-
-.servicos-header {
-  margin-bottom: 64px;
-  position: relative;
-}
-
-.publicos-tabs {
-  display: flex;
-  gap: 0;
-  margin-bottom: 48px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  position: relative;
-}
-
-.tab-btn {
-  padding: 14px 28px;
-  background: transparent;
-  border: none;
-  font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
+.perfil-card .seta {
+  display: block;
+  margin-top: 16px;
+  font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  cursor: pointer;
-  transition: all 0.2s;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-}
-
-.tab-btn:hover { color: rgba(255,255,255,0.7); }
-.tab-btn.active {
   color: var(--dourado);
-  border-bottom-color: var(--dourado);
 }
 
-.tab-panel { display: none; }
-.tab-panel.active { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-
-.servico-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-top: 3px solid var(--dourado);
-  padding: 32px 28px;
-  border-radius: 3px;
-  transition: all 0.25s ease;
-  position: relative;
-}
-
-.servico-card:hover {
-  background: rgba(255,255,255,0.07);
-  transform: translateY(-3px);
-}
-
-.servico-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.4rem;
-  font-weight: 300;
-  color: rgba(201,168,76,0.2);
-  line-height: 1;
-  margin-bottom: 16px;
-}
-
-.servico-nome {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--branco);
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
-
-.servico-desc {
-  font-size: 0.65rem;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-.servico-inclui {
-  list-style: none;
-  border-top: 1px solid rgba(255,255,255,0.07);
-  padding-top: 16px;
-}
-
-.servico-inclui li {
-  font-size: 0.61rem;
-  color: rgba(255,255,255,0.4);
-  padding: 5px 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  letter-spacing: 0.03em;
-}
-
-.servico-inclui li::before {
-  content: '✓';
-  color: var(--dourado);
-  font-size: 0.7rem;
-}
-
-/* ─── COMO FUNCIONA ─── */
-.como-funciona {
-  background: var(--off-white);
-}
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  margin-top: 64px;
-  position: relative;
-}
-
-.steps::before {
-  content: '';
-  position: absolute;
-  top: 28px;
-  left: 10%;
-  right: 10%;
-  height: 1px;
-  background: var(--cinza-claro);
-}
-
-.step {
-  text-align: center;
-  padding: 0 24px;
-  position: relative;
-}
-
-.step-num {
-  width: 56px;
-  height: 56px;
-  background: var(--azul-escuro);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 24px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: var(--dourado);
+/* CREDENCIAIS */
+.credenciais {
   position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding: 24px 40px;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  background: rgba(0,0,0,0.2);
+  opacity: 0;
+  animation: fadeUp 0.8s ease 1s forwards;
 }
 
-.step-titulo {
+.cred-item {
+  text-align: center;
+}
+
+.cred-item strong {
+  display: block;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--azul-escuro);
-  margin-bottom: 10px;
-}
-
-.step-desc {
-  font-size: 0.63rem;
-  color: var(--cinza);
-  line-height: 1.8;
-}
-
-/* ─── DIFERENCIAIS ─── */
-.diferenciais {
-  background: var(--branco);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.diff-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 40px;
-}
-
-.diff-item {
-  padding: 24px 20px;
-  background: var(--off-white);
-  border-radius: 3px;
-  border-bottom: 3px solid var(--azul-escuro);
-}
-
-.diff-icon {
   font-size: 1.4rem;
-  margin-bottom: 12px;
-  display: block;
+  font-weight: 400;
+  color: var(--dourado);
 }
 
-.diff-titulo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--azul-escuro);
-  margin-bottom: 8px;
-}
-
-.diff-desc {
-  font-size: 0.62rem;
-  color: var(--cinza);
-  line-height: 1.8;
-}
-
-.diff-quote {
-  background: var(--azul-escuro);
-  padding: 48px 40px;
-  border-radius: 3px;
-  position: relative;
-}
-
-.diff-quote::before {
-  content: '"';
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 8rem;
-  color: rgba(201,168,76,0.15);
-  position: absolute;
-  top: -20px;
-  left: 24px;
-  line-height: 1;
-}
-
-.diff-quote blockquote {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--branco);
-  line-height: 1.6;
-  position: relative;
-}
-
-.diff-quote cite {
-  display: block;
-  margin-top: 20px;
-  font-family: 'DM Mono', monospace;
-  font-size: 0.6rem;
-  font-style: normal;
+.cred-item span {
+  font-size: 0.65rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--dourado);
+  color: rgba(255,255,255,0.35);
 }
-
-/* ─── FORMULÁRIO ─── */
-.formulario-section {
-  background: var(--off-white);
-  padding: 100px 60px;
-}
-
-.form-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.form-header {
-  text-align: center;
-  margin-bottom: 56px;
-}
-
-.perfil-selector {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  margin-bottom: 48px;
-  flex-wrap: wrap;
-}
-
-.perfil-btn {
-  padding: 13px 28px;
-  border: 1.5px solid var(--cinza-claro);
-  background: var(--branco);
-  color: var(--cinza);
-  font-family: 'DM Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 2px;
-  transition: all 0.2s;
-}
-
-.perfil-btn:hover { border-color: var(--azul); color: var(--azul); }
-.perfil-btn.active {
-  background: var(--azul-escuro);
-  border-color: var(--azul-escuro);
-  color: var(--dourado);
-}
-
-.form-panel { display: none; }
-.form-panel.active { display: block; animation: fadeUp 0.3s ease; }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.form-card {
-  background: var(--branco);
-  border: 1px solid var(--cinza-claro);
-  border-radius: 4px;
-  padding: 48px;
-  box-shadow: 0 4px 40px rgba(0,47,95,0.06);
-}
-
-.form-section-label {
-  font-size: 0.58rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--azul);
-  margin-bottom: 20px;
-  margin-top: 32px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.form-section-label:first-child { margin-top: 0; }
-
-.form-section-label::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--cinza-claro);
-}
-
-.field { margin-bottom: 18px; }
-
-.field label {
-  display: block;
-  font-size: 0.65rem;
-  color: var(--cinza);
-  margin-bottom: 7px;
-  letter-spacing: 0.03em;
-}
-
-.field input,
-.field select,
-.field textarea {
-  width: 100%;
-  padding: 11px 14px;
-  border: 1.5px solid var(--cinza-claro);
-  background: var(--off-white);
-  font-family: 'DM Mono', monospace;
-  font-size: 0.72rem;
-  color: var(--texto);
-  border-radius: 3px;
-  transition: border-color 0.2s;
-  outline: none;
-  appearance: none;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus {
-  border-color: var(--azul);
-  background: var(--branco);
-}
-
-.field textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
-
-.field select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23004A95' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  padding-right: 36px;
-  cursor: pointer;
-}
-
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-.radio-group { display: flex; flex-wrap: wrap; gap: 9px; }
-
-.radio-opt {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  border: 1.5px solid var(--cinza-claro);
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all 0.2s;
-  background: var(--off-white);
-}
-
-.radio-opt:hover { border-color: var(--azul); }
-.radio-opt input { accent-color: var(--azul); width: auto; padding: 0; border: none; background: none; }
-.radio-opt span { font-size: 0.67rem; color: var(--texto); }
-.radio-opt:has(input:checked) { border-color: var(--azul); background: #E8F0FA; }
-.radio-opt:has(input:checked) span { color: var(--azul); }
-
-.urgencia-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
-
-.urg-card {
-  padding: 16px;
-  border: 1.5px solid var(--cinza-claro);
-  border-radius: 3px;
-  cursor: pointer;
-  text-align: center;
-  transition: all 0.2s;
-  background: var(--off-white);
-}
-
-.urg-card input { display: none; }
-.urg-card .ico { font-size: 1.2rem; display: block; margin-bottom: 6px; }
-.urg-card .lbl { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--cinza); }
-.urg-card:has(input:checked) { border-color: var(--azul); background: #E8F0FA; }
-.urg-card:has(input:checked) .lbl { color: var(--azul); }
-
-.form-footer {
-  margin-top: 36px;
-  padding-top: 24px;
-  border-top: 1px solid var(--cinza-claro);
-}
-
-.privacy-txt {
-  font-size: 0.6rem;
-  color: var(--cinza);
-  line-height: 1.7;
-  margin-bottom: 20px;
-  letter-spacing: 0.02em;
-}
-
-.btn-enviar {
-  width: 100%;
-  padding: 16px;
-  background: var(--azul-escuro);
-  color: var(--branco);
-  border: none;
-  font-family: 'DM Mono', monospace;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 3px;
-  border-bottom: 3px solid var(--dourado);
-  transition: all 0.2s;
-}
-
-.btn-enviar:hover { background: var(--azul); }
-
-.success-box {
-  display: none;
-  text-align: center;
-  padding: 60px 40px;
-  background: var(--branco);
-  border-radius: 4px;
-  border: 1px solid var(--cinza-claro);
-}
-
-.success-box.show { display: block; animation: fadeUp 0.4s ease; }
-
-.success-circle {
-  width: 64px; height: 64px;
-  background: #E8F0FA;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 20px;
-  font-size: 1.5rem;
-}
-
-.success-box h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
-  color: var(--azul-escuro);
-  margin-bottom: 12px;
-}
-
-.success-box p {
-  font-size: 0.68rem;
-  color: var(--cinza);
-  line-height: 1.8;
-  max-width: 380px;
-  margin: 0 auto;
-}
-
-/* ─── FOOTER ─── */
-footer {
-  background: var(--azul-escuro);
-  padding: 60px 60px 40px;
-  border-top: 3px solid var(--dourado);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 60px;
-  margin-bottom: 48px;
-}
-
-.footer-brand h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--branco);
-  margin-bottom: 12px;
-}
-
-.footer-brand p {
-  font-size: 0.62rem;
-  color: rgba(255,255,255,0.4);
-  line-height: 1.8;
-  max-width: 280px;
-}
-
-.footer-col h4 {
-  font-size: 0.58rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--dourado);
-  margin-bottom: 16px;
-}
-
-.footer-col ul { list-style: none; }
-
-.footer-col ul li {
-  font-size: 0.63rem;
-  color: rgba(255,255,255,0.45);
-  padding: 5px 0;
-  letter-spacing: 0.03em;
-}
-
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 28px;
-  border-top: 1px solid rgba(255,255,255,0.07);
-}
-
-.footer-bottom p {
-  font-size: 0.58rem;
-  color: rgba(255,255,255,0.25);
-  letter-spacing: 0.05em;
-}
-
-.oab-note {
-  font-size: 0.56rem;
-  color: rgba(255,255,255,0.2);
-  letter-spacing: 0.04em;
-  text-align: right;
-  max-width: 340px;
-}
-
-/* ─── MOBILE ─── */
-@media (max-width: 768px) {
-  nav { padding: 16px 20px; }
-  .nav-links { display: none; }
-  section { padding: 70px 20px; }
-  .hero { padding: 100px 20px 90px; }
-  .hero-stat-strip { padding: 16px 20px; gap: 24px; flex-wrap: wrap; }
-  .problema { grid-template-columns: 1fr; gap: 40px; }
-  .problema-card-stack { height: 240px; }
-  .steps { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .steps::before { display: none; }
-  .diferenciais { grid-template-columns: 1fr; gap: 40px; }
-  .diff-grid { grid-template-columns: 1fr; }
-  .formulario-section { padding: 70px 20px; }
-  .form-card { padding: 28px 20px; }
-  .grid-2 { grid-template-columns: 1fr; }
-  .urgencia-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 36px; }
-  .footer { padding: 48px 20px 32px; }
-  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-  .oab-note { text-align: center; }
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  nav { padding: 18px 20px; }
+  .hero { padding: 100px 20px 60px; }
+  .perfis { grid-template-columns: 1fr; max-width: 100%; }
+  .credenciais { gap: 24px; flex-wrap: wrap; padding: 20px; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<div class="grid-bg"></div>
+
 <nav>
-  <a class="nav-logo" href="#">Paravani Fialho <span>Advocacia</span></a>
-  <ul class="nav-links">
-    <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#como-funciona">Como funciona</a></li>
-    <li><a href="#diferenciais">Diferenciais</a></li>
-    <li><a href="#contato" class="nav-cta">Solicitar análise</a></li>
-  </ul>
+  <a class="nav-logo" href="index.html">MPF <span>Advocacia</span></a>
+  <div class="nav-oab">OAB/SP nº 339.290 · Direito Imobiliário</div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Direito Imobiliário — São Paulo</div>
-    <h1>Segurança jurídica<br>na sua operação<br><em>imobiliária.</em></h1>
-    <p class="hero-sub">
-      Assessoria jurídica especializada para compradores, vendedores e corretores autônomos. 
-      Análise de matrícula, contratos e acompanhamento completo da transação — 
-      100% online, com experiência de cartório de notas.
-    </p>
-    <div class="hero-actions">
-      <a href="#contato" class="btn-primary">Solicitar análise</a>
-      <a href="#servicos" class="btn-ghost">Ver serviços</a>
-    </div>
-  </div>
-  <div class="hero-stat-strip">
-    <div class="hero-stat">
-      <strong>100%</strong>
-      <span>Atendimento online</span>
-    </div>
-    <div class="hero-stat">
-      <strong>OAB/SP</strong>
-      <span>nº 339.290</span>
-    </div>
-    <div class="hero-stat">
-      <strong>SP</strong>
-      <span>Foco em São Paulo</span>
-    </div>
-    <div class="hero-stat">
-      <strong>24h</strong>
-      <span>Retorno inicial</span>
-    </div>
-  </div>
-</section>
+  <div class="hero-eyebrow">Direito Imobiliário · São Paulo · 100% Online</div>
 
-<!-- PROBLEMA -->
-<section class="problema" id="sobre">
-  <div class="problema-content">
-    <div class="section-tag">O problema</div>
-    <h2 class="section-title">A maioria dos negócios<br>imobiliários fecha<br><em>sem análise jurídica.</em></h2>
-    <p class="section-desc">
-      Imóvel com penhora, contrato desequilibrado, matrícula com ônus oculto — 
-      problemas que só aparecem depois que o sinal foi dado, o contrato foi assinado 
-      ou o registro foi negado.
-    </p>
-    <ul class="problema-lista">
-      <li>Matrícula com ações judiciais, penhoras ou alienações não reveladas pelo vendedor</li>
-      <li>Contratos com cláusulas de multa desproporcional ou posse indefinida</li>
-      <li>Imóveis em inventário, com herdeiros menores ou documentação irregular</li>
-      <li>Financiamento negado após pagamento de sinal por pendência documental</li>
-      <li>FGTS bloqueado por imóvel sem habite-se ou débitos de condomínio</li>
-    </ul>
+  <h1>Segurança jurídica<br>na sua operação <em>imobiliária.</em></h1>
+
+  <div class="hero-frases">
+    <p class="frase"><strong>Você assina o contrato.</strong> Nós garantimos que você sabe o que está assinando.</p>
+    <p class="frase"><strong>Cada operação imobiliária tem mais etapas do que parece</strong> — e cada uma carrega um risco específico. Identificá-los antes é o que evita prejuízo depois.</p>
+    <p class="frase"><strong>Advogado independente.</strong> Sem conflito de interesse. Só o seu lado.</p>
   </div>
-  <div class="problema-visual">
-    <div class="problema-card-stack">
-      <div class="risco-card">
-        <div class="risco-titulo">⚠ Penhora na matrícula</div>
-        <div class="risco-desc">Identificada após pagamento de sinal de R$ 45.000. Negócio desfeito, valor retido por meses.</div>
-      </div>
-      <div class="risco-card">
-        <div class="risco-titulo">⚠ Cláusula de posse indefinida</div>
-        <div class="risco-desc">Contrato sem data de entrega das chaves. Comprador sem direito de cobrar após 8 meses de espera.</div>
-      </div>
-      <div class="risco-card">
-        <div class="risco-titulo">⚠ Imóvel em inventário não informado</div>
-        <div class="risco-desc">Venda realizada por apenas um herdeiro sem poderes. Escritura bloqueada em cartório.</div>
-      </div>
-    </div>
+
+  <div class="perfis">
+    <a class="perfil-card" href="cliente.html?perfil=comprador">
+      <span class="icon">🏠</span>
+      <div class="titulo">Estou comprando um imóvel</div>
+      <div class="desc">Análise de matrícula, contrato, financiamento e acompanhamento até o registro.</div>
+      <span class="seta">Saiba como podemos ajudar →</span>
+    </a>
+
+    <a class="perfil-card" href="cliente.html?perfil=vendedor">
+      <span class="icon">📋</span>
+      <div class="titulo">Estou vendendo um imóvel</div>
+      <div class="desc">Diagnóstico documental, elaboração de contrato e assessoria até a escritura.</div>
+      <span class="seta">Saiba como podemos ajudar →</span>
+    </a>
+
+    <a class="perfil-card" href="regularizacao.html">
+      <span class="icon">⚖️</span>
+      <div class="titulo">Tenho um imóvel com problema</div>
+      <div class="desc">Regularização, usucapião, averbação, inventário, usufruto e outros — mesmo que você não saiba o nome do que precisa.</div>
+      <span class="seta">Descreva sua situação →</span>
+    </a>
+
+    <a class="perfil-card" href="corretor.html">
+      <span class="icon">🤝</span>
+      <div class="titulo">Sou corretor autônomo</div>
+      <div class="desc">Suporte jurídico por operação ou parceria mensal recorrente. Feche mais negócios com respaldo.</div>
+      <span class="seta">Conheça a parceria →</span>
+    </a>
   </div>
 </section>
 
-<!-- SERVIÇOS -->
-<section class="servicos" id="servicos">
-  <div class="servicos-header">
-    <div class="section-tag">Serviços</div>
-    <h2 class="section-title">O que oferecemos</h2>
-    <p class="section-desc">Escolha seu perfil e veja como podemos atuar na sua operação.</p>
-  </div>
+<div class="credenciais">
+  <div class="cred-item"><strong>OAB/SP</strong><span>nº 339.290</span></div>
+  <div class="cred-item"><strong>100%</strong><span>Online</span></div>
+  <div class="cred-item"><strong>24h</strong><span>Retorno inicial</span></div>
+  <div class="cred-item"><strong>Parecer</strong><span>Sempre por escrito</span></div>
+</div>
 
-  <div class="publicos-tabs">
-    <button class="tab-btn active" onclick="showTab('comprador', this)">Compradores</button>
-    <button class="tab-btn" onclick="showTab('vendedor', this)">Vendedores</button>
-    <button class="tab-btn" onclick="showTab('corretor', this)">Corretores autônomos</button>
-    <button class="tab-btn" onclick="showTab('locador', this)">Locadores</button>
-  </div>
-
-  <div class="tab-panel active" id="tab-comprador">
-    <div class="servico-card">
-      <div class="servico-num">01</div>
-      <div class="servico-nome">Análise de Matrícula e Documentação</div>
-      <div class="servico-desc">Para quem encontrou o imóvel e quer saber se há riscos antes de dar o sinal.</div>
-      <ul class="servico-inclui">
-        <li>Análise completa da matrícula atualizada</li>
-        <li>Identificação de ônus, penhoras e indisponibilidades</li>
-        <li>Checklist de documentos do vendedor</li>
-        <li>Parecer jurídico escrito com conclusão clara</li>
-        <li>Prazo: 3 dias úteis</li>
-      </ul>
-    </div>
-    <div class="servico-card">
-      <div class="servico-num">02</div>
-      <div class="servico-nome">Análise do Contrato de Compra e Venda</div>
-      <div class="servico-desc">Para quem recebeu uma minuta e precisa saber o que está assinando.</div>
-      <ul class="servico-inclui">
-        <li>Análise de todas as cláusulas do contrato</li>
-        <li>Avaliação de sinal, multa, posse e escritura</li>
-        <li>Identificação de cláusulas abusivas ou omissões</li>
-        <li>Sugestão de ajustes por escrito</li>
-        <li>Prazo: 3 dias úteis</li>
-      </ul>
-    </div>
-    <div class="servico-card">
-      <div class="servico-num">03</div>
-      <div class="servico-nome">Assessoria Completa na Compra</div>
-      <div class="servico-desc">Acompanhamento integral do início até o registro do imóvel no seu nome.</div>
-      <ul class="servico-inclui">
-        <li>Análise de matrícula + análise contratual</li>
-        <li>Acompanhamento do financiamento e FGTS</li>
-        <li>Orientação sobre ITBI e transferência de IPTU</li>
-        <li>Contato com cartório de notas e registro</li>
-        <li>Duração da operação</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="tab-panel" id="tab-vendedor">
-    <div class="servico-card">
-      <div class="servico-num">01</div>
-      <div class="servico-nome">Diagnóstico Jurídico para Venda</div>
-      <div class="servico-desc">Saiba se o seu imóvel está apto para venda antes de anunciar.</div>
-      <ul class="servico-inclui">
-        <li>Análise da matrícula e situação registral</li>
-        <li>Verificação de pendências de IPTU e condomínio</li>
-        <li>Checklist de documentos do vendedor</li>
-        <li>Relatório de diagnóstico com providências</li>
-        <li>Prazo: 3 dias úteis</li>
-      </ul>
-    </div>
-    <div class="servico-card">
-      <div class="servico-num">02</div>
-      <div class="servico-nome">Assessoria Completa na Venda</div>
-      <div class="servico-desc">Suporte jurídico do contrato até a escritura lavrada e registrada.</div>
-      <ul class="servico-inclui">
-        <li>Análise ou elaboração do contrato de compra e venda</li>
-        <li>Orientação sobre recebimento de sinal</li>
-        <li>Acompanhamento do financiamento do comprador</li>
-        <li>Orientação sobre imposto de renda na venda</li>
-        <li>Acompanhamento até escritura e registro</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="tab-panel" id="tab-corretor">
-    <div class="servico-card">
-      <div class="servico-num">01</div>
-      <div class="servico-nome">Suporte Jurídico por Operação</div>
-      <div class="servico-desc">Para o corretor que está fechando uma venda e precisa de respaldo jurídico para o cliente.</div>
-      <ul class="servico-inclui">
-        <li>Análise da matrícula e do contrato</li>
-        <li>Parecer escrito para apresentar ao cliente</li>
-        <li>Orientação sobre pontos críticos da operação</li>
-        <li>Resposta direta ao corretor</li>
-        <li>Prazo: 2 dias úteis</li>
-      </ul>
-    </div>
-    <div class="servico-card">
-      <div class="servico-num">02</div>
-      <div class="servico-nome">Parceria Jurídica Recorrente</div>
-      <div class="servico-desc">Para o corretor que fecha várias operações por mês e quer um advogado de referência.</div>
-      <ul class="servico-inclui">
-        <li>Suporte jurídico em todas as operações do mês</li>
-        <li>Análise de matrículas e contratos</li>
-        <li>Disponibilidade para dúvidas por WhatsApp</li>
-        <li>Parecer por operação quando necessário</li>
-        <li>Honorários por operação ou pacote mensal</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="tab-panel" id="tab-locador">
-    <div class="servico-card">
-      <div class="servico-num">01</div>
-      <div class="servico-nome">Análise de Contrato de Locação</div>
-      <div class="servico-desc">Para quem recebeu uma minuta e quer saber o que está assinando.</div>
-      <ul class="servico-inclui">
-        <li>Análise de todas as cláusulas do contrato</li>
-        <li>Avaliação de garantia, multa e reajuste</li>
-        <li>Identificação de desequilíbrios e omissões</li>
-        <li>Sugestão de ajustes por escrito</li>
-        <li>Prazo: 2 dias úteis</li>
-      </ul>
-    </div>
-    <div class="servico-card">
-      <div class="servico-num">02</div>
-      <div class="servico-nome">Elaboração de Contrato de Locação</div>
-      <div class="servico-desc">Para o locador que vai alugar diretamente e quer um contrato seguro.</div>
-      <ul class="servico-inclui">
-        <li>Elaboração do contrato completo</li>
-        <li>Orientação sobre escolha da garantia</li>
-        <li>Cláusulas de proteção ao locador</li>
-        <li>Orientação sobre vistoria e entrega</li>
-        <li>Prazo: 3 dias úteis</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- COMO FUNCIONA -->
-<section class="como-funciona" id="como-funciona">
-  <div class="section-tag">Processo</div>
-  <h2 class="section-title">Como funciona</h2>
-  <p class="section-desc">Atendimento estruturado, sem burocracia, 100% online.</p>
-
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-titulo">Formulário de triagem</div>
-      <div class="step-desc">Preencha o formulário com as informações da sua operação. Leva menos de 3 minutos.</div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-titulo">Retorno em 24h</div>
-      <div class="step-desc">Entramos em contato pelo WhatsApp ou e-mail para agendar uma conversa inicial.</div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-titulo">Proposta personalizada</div>
-      <div class="step-desc">Apresentamos a proposta de honorários adequada ao escopo e à complexidade da sua operação.</div>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <div class="step-titulo">Execução e entrega</div>
-      <div class="step-desc">Análise, parecer ou acompanhamento conforme o produto contratado, com comunicação direta.</div>
-    </div>
-  </div>
-</section>
-
-<!-- DIFERENCIAIS -->
-<section class="diferenciais" id="diferenciais">
-  <div>
-    <div class="section-tag">Por que nós</div>
-    <h2 class="section-title">Experiência que<br><em>faz diferença</em><br>no fechamento.</h2>
-    <p class="section-desc">
-      Formação em cartório de notas e anos de prática em operações imobiliárias em São Paulo 
-      — do contrato ao registro, conhecemos cada etapa do processo por dentro.
-    </p>
-    <div class="diff-grid">
-      <div class="diff-item">
-        <span class="diff-icon">🏛</span>
-        <div class="diff-titulo">Experiência em cartório</div>
-        <div class="diff-desc">Formação prática em cartório de notas. Conhecemos o processo registral por dentro.</div>
-      </div>
-      <div class="diff-item">
-        <span class="diff-icon">📋</span>
-        <div class="diff-titulo">Foco imobiliário</div>
-        <div class="diff-desc">Prática exclusivamente voltada a operações de compra, venda e locação em São Paulo.</div>
-      </div>
-      <div class="diff-item">
-        <span class="diff-icon">💻</span>
-        <div class="diff-titulo">100% online</div>
-        <div class="diff-desc">Atendimento completo por WhatsApp, e-mail e videoconferência. Sem deslocamento.</div>
-      </div>
-      <div class="diff-item">
-        <span class="diff-icon">📄</span>
-        <div class="diff-titulo">Parecer escrito</div>
-        <div class="diff-desc">Toda análise entregue por escrito, com conclusão clara e orientação sobre próximos passos.</div>
-      </div>
-    </div>
-  </div>
-  <div class="diff-quote">
-    <blockquote>
-      O produto não é a análise do contrato. O produto é a segurança jurídica na sua operação imobiliária.
-      <cite>— Paravani Fialho Advocacia</cite>
-    </blockquote>
-  </div>
-</section>
-
-<!-- FORMULÁRIO -->
-<section class="formulario-section" id="contato">
-  <div class="form-container">
-    <div class="form-header">
-      <div class="section-tag" style="justify-content:center">Contato</div>
-      <h2 class="section-title" style="text-align:center">Solicite sua análise</h2>
-      <p class="section-desc" style="text-align:center;margin:0 auto">
-        Preencha o formulário abaixo. Entraremos em contato em até 24 horas úteis.
-      </p>
-    </div>
-
-    <div class="perfil-selector">
-      <button class="perfil-btn" onclick="showFormPanel('comprador', this)">Estou comprando um imóvel</button>
-      <button class="perfil-btn" onclick="showFormPanel('corretor', this)">Sou corretor autônomo</button>
-    </div>
-
-    <!-- COMPRADOR -->
-    <div class="form-panel" id="fpanel-comprador">
-      <div class="form-card">
-        <form action="https://formspree.io/f/xkoaoljq" method="POST">
-          <input type="hidden" name="perfil" value="Comprador de Imóvel">
-          <div class="form-section-label">Seus dados</div>
-          <div class="grid-2">
-            <div class="field"><label>Nome completo</label><input type="text" name="nome" placeholder="Como prefere ser chamado(a)" required></div>
-            <div class="field"><label>WhatsApp</label><input type="tel" name="whatsapp" placeholder="(00) 00000-0000" required></div>
-          </div>
-          <div class="field"><label>E-mail</label><input type="email" name="email" placeholder="seu@email.com" required></div>
-          <div class="field">
-            <label>Onde mora atualmente?</label>
-            <div class="radio-group">
-              <label class="radio-opt"><input type="radio" name="localidade" value="SP Capital"><span>SP Capital</span></label>
-              <label class="radio-opt"><input type="radio" name="localidade" value="Interior SP"><span>Interior SP</span></label>
-              <label class="radio-opt"><input type="radio" name="localidade" value="Outro estado"><span>Outro estado</span></label>
-              <label class="radio-opt"><input type="radio" name="localidade" value="Exterior"><span>Exterior</span></label>
-            </div>
-          </div>
-
-          <div class="form-section-label">O imóvel</div>
-          <div class="grid-2">
-            <div class="field">
-              <label>Tipo de imóvel</label>
-              <select name="tipo_imovel" required>
-                <option value="">Selecione</option>
-                <option>Apartamento</option>
-                <option>Apartamento + vaga separada</option>
-                <option>Casa</option>
-                <option>Imóvel comercial</option>
-                <option>Terreno</option>
-                <option>Outro</option>
-              </select>
-            </div>
-            <div class="field"><label>Localização do imóvel</label><input type="text" name="localizacao_imovel" placeholder="Bairro e cidade"></div>
-          </div>
-          <div class="field">
-            <label>Valor aproximado da transação</label>
-            <select name="valor_transacao" required>
-              <option value="">Selecione a faixa</option>
-              <option>Até R$ 300.000</option>
-              <option>R$ 300.001 a R$ 600.000</option>
-              <option>R$ 600.001 a R$ 1.000.000</option>
-              <option>R$ 1.000.001 a R$ 2.000.000</option>
-              <option>Acima de R$ 2.000.000</option>
-            </select>
-          </div>
-
-          <div class="form-section-label">Situação atual</div>
-          <div class="field">
-            <label>Forma de pagamento</label>
-            <div class="radio-group">
-              <label class="radio-opt"><input type="radio" name="pagamento" value="À vista"><span>À vista</span></label>
-              <label class="radio-opt"><input type="radio" name="pagamento" value="Financiamento bancário"><span>Financiamento bancário</span></label>
-              <label class="radio-opt"><input type="radio" name="pagamento" value="Com FGTS"><span>Com FGTS</span></label>
-              <label class="radio-opt"><input type="radio" name="pagamento" value="FGTS + Financiamento"><span>FGTS + Financiamento</span></label>
-            </div>
-          </div>
-          <div class="field">
-            <label>Em que ponto está a negociação?</label>
-            <select name="estagio_negociacao" required>
-              <option value="">Selecione</option>
-              <option>Ainda procurando — quero entender os riscos</option>
-              <option>Já encontrei o imóvel, não assinei nada ainda</option>
-              <option>Recebi minuta de contrato</option>
-              <option>Já dei sinal — preciso revisar o contrato</option>
-              <option>Em processo de financiamento</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Serviço de interesse</label>
-            <div class="radio-group">
-              <label class="radio-opt"><input type="radio" name="servico" value="Análise de matrícula"><span>Análise de matrícula</span></label>
-              <label class="radio-opt"><input type="radio" name="servico" value="Análise de contrato"><span>Análise de contrato</span></label>
-              <label class="radio-opt"><input type="radio" name="servico" value="Assessoria completa"><span>Assessoria completa</span></label>
-              <label class="radio-opt"><input type="radio" name="servico" value="Quero orientação"><span>Quero orientação</span></label>
-            </div>
-          </div>
-          <div class="field">
-            <label>Urgência</label>
-            <div class="urgencia-grid">
-              <label class="urg-card"><input type="radio" name="urgencia" value="Sem pressa"><span class="ico">🗓</span><span class="lbl">Sem pressa</span></label>
-              <label class="urg-card"><input type="radio" name="urgencia" value="Alguns dias"><span class="ico">⏳</span><span class="lbl">Alguns dias</span></label>
-              <label class="urg-card"><input type="radio" name="urgencia" value="Urgente"><span class="ico">🔴</span><span class="lbl">Urgente</span></label>
-            </div>
-          </div>
-          <div class="field"><label>Observações (opcional)</label><textarea name="observacoes" placeholder="Descreva brevemente sua situação ou dúvida principal..."></textarea></div>
-          <div class="field">
-            <label>Como chegou até nós?</label>
-            <select name="origem">
-              <option value="">Selecione</option>
-              <option>Indicação</option>
-              <option>Google</option>
-              <option>Instagram</option>
-              <option>Corretor</option>
-              <option>Outro</option>
-            </select>
-          </div>
-          <div class="form-footer">
-            <p class="privacy-txt">As informações fornecidas destinam-se exclusivamente à triagem do atendimento. Nenhum dado é compartilhado com terceiros. O preenchimento deste formulário não implica contratação de serviços advocatícios nem estabelece relação advogado-cliente.</p>
-            <button type="submit" class="btn-enviar">Enviar solicitação de contato</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <!-- CORRETOR -->
-    <div class="form-panel" id="fpanel-corretor">
-      <div class="form-card">
-        <form action="https://formspree.io/f/xkoaoljq" method="POST">
-          <input type="hidden" name="perfil" value="Corretor Autônomo">
-          <div class="form-section-label">Dados profissionais</div>
-          <div class="grid-2">
-            <div class="field"><label>Nome completo</label><input type="text" name="nome" placeholder="Nome completo" required></div>
-            <div class="field"><label>CRECI</label><input type="text" name="creci" placeholder="Nº do CRECI (se possuir)"></div>
-          </div>
-          <div class="grid-2">
-            <div class="field"><label>WhatsApp profissional</label><input type="tel" name="whatsapp" placeholder="(00) 00000-0000" required></div>
-            <div class="field"><label>E-mail</label><input type="email" name="email" placeholder="seu@email.com" required></div>
-          </div>
-          <div class="field"><label>Região de atuação principal</label><input type="text" name="regiao_atuacao" placeholder="Ex.: Zona Sul SP, ABC, Campinas..."></div>
-
-          <div class="form-section-label">Seu volume de trabalho</div>
-          <div class="field">
-            <label>Operações fechadas por mês (média)</label>
-            <div class="radio-group">
-              <label class="radio-opt"><input type="radio" name="volume_mensal" value="1 operação"><span>1</span></label>
-              <label class="radio-opt"><input type="radio" name="volume_mensal" value="2 a 3"><span>2 a 3</span></label>
-              <label class="radio-opt"><input type="radio" name="volume_mensal" value="4 a 6"><span>4 a 6</span></label>
-              <label class="radio-opt"><input type="radio" name="volume_mensal" value="7 ou mais"><span>7 ou mais</span></label>
-            </div>
-          </div>
-          <div class="field">
-            <label>Ticket médio das operações</label>
-            <select name="ticket_medio">
-              <option value="">Selecione</option>
-              <option>Até R$ 300.000</option>
-              <option>R$ 300.001 a R$ 600.000</option>
-              <option>R$ 600.001 a R$ 1.000.000</option>
-              <option>Acima de R$ 1.000.000</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Forma de atuação</label>
-            <div class="radio-group">
-              <label class="radio-opt"><input type="radio" name="vinculo" value="Autônomo"><span>Autônomo</span></label>
-              <label class="radio-opt"><input type="radio" name="vinculo" value="Imobiliária"><span>Imobiliária</span></label>
-              <label class="radio-opt"><input type="radio" name="vinculo" value="Ambos"><span>Ambos</span></label>
-            </div>
-          </div>
-
-          <div class="form-section-label">O que você precisa</div>
-          <div class="field">
-            <label>Principal dificuldade jurídica nas operações</label>
-            <div class="radio-group">
-              <label class="radio-opt"><input type="radio" name="dificuldade" value="Análise de matrícula"><span>Análise de matrícula</span></label>
-              <label class="radio-opt"><input type="radio" name="dificuldade" value="Contratos"><span>Contratos</span></label>
-              <label class="radio-opt"><input type="radio" name="dificuldade" value="Documentação das partes"><span>Documentação das partes</span></label>
-              <label class="radio-opt"><input type="radio" name="dificuldade" value="Financiamento"><span>Financiamento</span></label>
-              <label class="radio-opt"><input type="radio" name="dificuldade" value="Imóveis com pendências"><span>Imóveis com pendências</span></label>
-            </div>
-          </div>
-          <div class="field">
-            <label>Modelo de parceria preferido</label>
-            <div class="radio-group">
-              <label class="radio-opt"><input type="radio" name="modelo_parceria" value="Pontual por operação"><span>Pontual por operação</span></label>
-              <label class="radio-opt"><input type="radio" name="modelo_parceria" value="Parceria mensal"><span>Parceria mensal</span></label>
-              <label class="radio-opt"><input type="radio" name="modelo_parceria" value="Quero entender as opções"><span>Quero entender as opções</span></label>
-            </div>
-          </div>
-          <div class="field"><label>Descreva uma situação recente em que sentiu falta de suporte jurídico (opcional)</label><textarea name="descricao_situacao" placeholder="Quanto mais detalhes, melhor conseguimos preparar nossa conversa..."></textarea></div>
-          <div class="field">
-            <label>Como chegou até nós?</label>
-            <select name="origem">
-              <option value="">Selecione</option>
-              <option>Indicação de outro corretor</option>
-              <option>Indicação de cliente</option>
-              <option>Google</option>
-              <option>Instagram</option>
-              <option>Outro</option>
-            </select>
-          </div>
-          <div class="form-footer">
-            <p class="privacy-txt">As informações fornecidas destinam-se exclusivamente à triagem do atendimento. Nenhum dado é compartilhado com terceiros. O preenchimento deste formulário não implica contratação de serviços advocatícios nem estabelece relação advogado-cliente.</p>
-            <button type="submit" class="btn-enviar">Enviar solicitação de contato</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-
-    <!-- SUCCESS -->
-    <div class="success-box" id="form-success">
-      <div class="success-circle">✓</div>
-      <h3>Solicitação recebida</h3>
-      <p>Entraremos em contato em até 24 horas úteis pelo WhatsApp ou e-mail informado.<br><br>Se sua situação for urgente, entre em contato diretamente pelo WhatsApp do escritório.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <h3>Paravani Fialho Advocacia</h3>
-      <p>Assessoria jurídica especializada em operações imobiliárias em São Paulo. Atendimento 100% online para compradores, vendedores, corretores e locadores.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Serviços</h4>
-      <ul>
-        <li>Análise de matrícula</li>
-        <li>Análise de contrato</li>
-        <li>Assessoria na compra</li>
-        <li>Assessoria na venda</li>
-        <li>Suporte a corretores</li>
-        <li>Contratos de locação</li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Informações</h4>
-      <ul>
-        <li>OAB/SP nº 339.290</li>
-        <li>Atendimento 100% online</li>
-        <li>Foco: São Paulo</li>
-        <li>Retorno em 24h úteis</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 Paravani Fialho Advocacia. Todos os direitos reservados.</p>
-    <p class="oab-note">Este site tem caráter exclusivamente informativo. Não constitui oferta de serviços nem promessa de resultado. Em conformidade com o Código de Ética e Disciplina da OAB.</p>
-  </div>
-</footer>
-
-<script>
-function showTab(nome, btn) {
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-' + nome).classList.add('active');
-  btn.classList.add('active');
-}
-
-function showFormPanel(nome, btn) {
-  document.querySelectorAll('.form-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.perfil-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('fpanel-' + nome).classList.add('active');
-  btn.classList.add('active');
-  document.getElementById('fpanel-' + nome).scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-function enviarForm(e) {
-  e.preventDefault();
-  document.querySelectorAll('.form-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.perfil-btn').forEach(b => b.classList.remove('active'));
-  const s = document.getElementById('form-success');
-  s.classList.add('show');
-  s.scrollIntoView({ behavior: 'smooth' });
-}
-</script>
 </body>
 </html>

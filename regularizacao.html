@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPF Advocacia — Regularização de Imóveis</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --azul: #004A95;
+  --azul-escuro: #002F5F;
+  --azul-claro: #E8F0FA;
+  --dourado: #C9A84C;
+  --off-white: #F7F5F0;
+  --cinza: #6B7280;
+  --cinza-claro: #E2E2E2;
+  --texto: #1C1C1E;
+  --branco: #FFFFFF;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Lato', sans-serif; background: var(--off-white); color: var(--texto); font-size: 16px; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 20px 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(0,47,95,0.97); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201,168,76,0.25);
+}
+
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--branco); text-decoration: none; }
+.nav-logo span { color: var(--dourado); }
+.nav-back { font-size: 0.78rem; color: rgba(255,255,255,0.5); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
+.nav-back:hover { color: var(--dourado); }
+
+.page-hero {
+  background: var(--azul-escuro);
+  padding: 130px 60px 70px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+
+.page-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.page-hero-tag { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dourado); margin-bottom: 16px; position: relative; }
+
+.page-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300; color: var(--branco); line-height: 1.2;
+  position: relative; max-width: 700px; margin: 0 auto 16px;
+}
+
+.page-hero p { font-size: 1rem; color: rgba(255,255,255,0.55); font-weight: 300; position: relative; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+/* SITUAÇÕES */
+.situacoes-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 40px 40px;
+}
+
+.situacoes-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--azul-escuro);
+  margin-bottom: 8px;
+}
+
+.situacoes-section p {
+  font-size: 0.9rem;
+  color: var(--cinza);
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+.situacoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.situacao-item {
+  background: var(--branco);
+  border: 1px solid var(--cinza-claro);
+  border-left: 4px solid var(--dourado);
+  padding: 20px 18px;
+  border-radius: 3px;
+}
+
+.situacao-item .sit-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--azul-escuro);
+  margin-bottom: 6px;
+}
+
+.situacao-item .sit-desc {
+  font-size: 0.8rem;
+  color: var(--cinza);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.aviso {
+  background: var(--azul-claro);
+  border: 1px solid rgba(0,74,149,0.15);
+  border-radius: 3px;
+  padding: 18px 20px;
+  font-size: 0.85rem;
+  color: var(--azul-escuro);
+  line-height: 1.7;
+  margin-top: 8px;
+}
+
+/* FORMULÁRIO */
+.form-section { background: var(--azul-escuro); padding: 80px 40px; }
+.form-container { max-width: 760px; margin: 0 auto; }
+
+.form-header { text-align: center; margin-bottom: 48px; }
+.form-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--branco); margin-bottom: 10px; }
+.form-header p { font-size: 0.9rem; color: rgba(255,255,255,0.5); font-weight: 300; }
+
+.form-card { background: var(--branco); border-radius: 4px; padding: 48px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+
+.section-label {
+  font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--azul); font-weight: 700; margin-bottom: 18px; margin-top: 28px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-label:first-child { margin-top: 0; }
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--cinza-claro); }
+
+.field { margin-bottom: 18px; }
+.field label { display: block; font-size: 0.82rem; color: var(--cinza); margin-bottom: 7px; font-weight: 400; }
+
+.field input, .field select, .field textarea {
+  width: 100%; padding: 12px 16px;
+  border: 1.5px solid var(--cinza-claro);
+  background: var(--off-white);
+  font-family: 'Lato', sans-serif; font-size: 0.9rem; color: var(--texto);
+  border-radius: 3px; transition: border-color 0.2s; outline: none; appearance: none;
+}
+
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--azul); background: var(--branco); }
+.field textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23004A95' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center;
+  padding-right: 40px; cursor: pointer;
+}
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.check-group { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.check-opt {
+  display: flex; align-items: center; gap: 9px;
+  padding: 9px 16px; border: 1.5px solid var(--cinza-claro);
+  border-radius: 3px; cursor: pointer; transition: all 0.2s; background: var(--off-white);
+}
+
+.check-opt:hover { border-color: var(--azul); }
+.check-opt input { accent-color: var(--azul); width: auto; padding: 0; border: none; background: none; }
+.check-opt span { font-size: 0.82rem; color: var(--texto); font-weight: 400; }
+.check-opt:has(input:checked) { border-color: var(--azul); background: #E8F0FA; }
+.check-opt:has(input:checked) span { color: var(--azul); font-weight: 700; }
+
+.urgencia-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+.urg-card { padding: 16px; border: 1.5px solid var(--cinza-claro); border-radius: 3px; cursor: pointer; text-align: center; transition: all 0.2s; background: var(--off-white); }
+.urg-card input { display: none; }
+.urg-card .ico { font-size: 1.3rem; display: block; margin-bottom: 6px; }
+.urg-card .lbl { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--cinza); font-weight: 700; }
+.urg-card:has(input:checked) { border-color: var(--azul); background: #E8F0FA; }
+.urg-card:has(input:checked) .lbl { color: var(--azul); }
+
+.privacy-txt { font-size: 0.75rem; color: var(--cinza); line-height: 1.7; margin: 24px 0 20px; padding-top: 20px; border-top: 1px solid var(--cinza-claro); }
+
+.btn-enviar {
+  width: 100%; padding: 17px; background: var(--azul-escuro); color: var(--branco);
+  border: none; font-family: 'Lato', sans-serif; font-size: 0.85rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer;
+  border-radius: 3px; border-bottom: 3px solid var(--dourado); transition: background 0.2s;
+}
+.btn-enviar:hover { background: var(--azul); }
+
+.success-box { display: none; text-align: center; padding: 60px 40px; background: var(--branco); border-radius: 4px; }
+.success-box.show { display: block; }
+.success-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--azul-escuro); margin: 16px 0 10px; }
+.success-box p { font-size: 0.9rem; color: var(--cinza); line-height: 1.8; font-weight: 300; }
+
+footer { background: var(--azul-escuro); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(201,168,76,0.2); }
+footer p { font-size: 0.72rem; color: rgba(255,255,255,0.25); letter-spacing: 0.04em; }
+footer a { font-size: 0.72rem; color: rgba(255,255,255,0.3); text-decoration: none; }
+footer a:hover { color: var(--dourado); }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .page-hero { padding: 100px 20px 50px; }
+  .situacoes-section { padding: 40px 20px; }
+  .situacoes-grid { grid-template-columns: 1fr; }
+  .form-section { padding: 60px 20px; }
+  .form-card { padding: 28px 20px; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .urgencia-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 10px; padding: 24px 20px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">MPF <span>Advocacia</span></a>
+  <a class="nav-back" href="index.html">← Voltar</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-tag">Regularização de Imóveis</div>
+  <h1>Tem um problema com seu imóvel?</h1>
+  <p>Não precisa saber o nome jurídico do problema. Descreva a situação — nós identificamos o que precisa ser feito e como resolver.</p>
+</div>
+
+<div class="situacoes-section">
+  <h2>Situações que atendemos</h2>
+  <p>Abaixo você encontra as situações mais comuns que atendemos. Role a página para preencher o formulário de contato e descrever sua situação.</p>
+
+  <div class="situacoes-grid">
+    <div class="situacao-item">
+      <div class="sit-titulo">Usucapião</div>
+      <div class="sit-desc">Imóvel ocupado há anos sem documento de propriedade formal.</div>
+    </div>
+    <div class="situacao-item">
+      <div class="sit-titulo">Regularização de Imóvel</div>
+      <div class="sit-desc">Imóvel sem registro, sem habite-se ou com documentação incompleta.</div>
+    </div>
+    <div class="situacao-item">
+      <div class="sit-titulo">Averbação</div>
+      <div class="sit-desc">Atualização de construção, demolição ou alteração na matrícula.</div>
+    </div>
+    <div class="situacao-item">
+      <div class="sit-titulo">Baixa de Usufruto</div>
+      <div class="sit-desc">Cancelamento de usufruto após falecimento ou desistência do usufrutuário.</div>
+    </div>
+    <div class="situacao-item">
+      <div class="sit-titulo">Inventário e Partilha</div>
+      <div class="sit-desc">Transferência de imóvel após falecimento do proprietário.</div>
+    </div>
+    <div class="situacao-item">
+      <div class="sit-titulo">Retificação de Área</div>
+      <div class="sit-desc">Correção de metragem ou confrontantes na matrícula do imóvel.</div>
+    </div>
+    <div class="situacao-item">
+      <div class="sit-titulo">Cancelamento de Gravame</div>
+      <div class="sit-desc">Baixa de hipoteca, alienação fiduciária ou penhora quitada.</div>
+    </div>
+    <div class="situacao-item">
+      <div class="sit-titulo">Outro problema</div>
+      <div class="sit-desc">Situação que não se encaixa nas categorias acima — descreva no formulário.</div>
+    </div>
+  </div>
+
+  <div class="aviso">
+    💡 <strong>Não sabe qual é o seu problema?</strong> Tudo bem. Preencha o formulário descrevendo a situação com suas próprias palavras. Faremos a análise e te explicamos o que precisa ser feito.
+  </div>
+</div>
+
+<div class="form-section" id="contato">
+  <div class="form-container">
+    <div class="form-header">
+      <h2>Descreva sua situação</h2>
+      <p>Preencha o formulário. Entraremos em contato em até 24 horas úteis.</p>
+    </div>
+
+    <div class="form-card" id="form-wrapper">
+      <form action="https://formspree.io/f/xkoaoljq" method="POST">
+        <input type="hidden" name="perfil" value="Regularização de Imóvel">
+
+        <div class="section-label">Seus dados</div>
+        <div class="grid-2">
+          <div class="field"><label>Nome completo <span style="color:#C9A84C">*</span></label><input type="text" name="nome" placeholder="Como prefere ser chamado(a)" required></div>
+          <div class="field"><label>WhatsApp <span style="color:#C9A84C">*</span></label><input type="tel" name="whatsapp" placeholder="(00) 00000-0000" required></div>
+        </div>
+        <div class="field"><label>E-mail <span style="color:#C9A84C">*</span></label><input type="email" name="email" placeholder="seu@email.com" required></div>
+
+        <div class="section-label">O imóvel</div>
+        <div class="grid-2">
+          <div class="field">
+            <label>Tipo de imóvel</label>
+            <select name="tipo_imovel">
+              <option value="">Selecione</option>
+              <option>Apartamento</option>
+              <option>Casa</option>
+              <option>Terreno</option>
+              <option>Imóvel rural</option>
+              <option>Imóvel comercial</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="field"><label>Localização do imóvel <span style="color:#C9A84C">*</span></label><input type="text" name="localizacao_imovel" required placeholder="Bairro e cidade"></div>
+        </div>
+
+        <div class="section-label">Qual é o problema</div>
+        <div class="field">
+          <label>Selecione as situações que se aplicam (pode marcar mais de uma)</label>
+          <div class="check-group">
+            <label class="check-opt"><input type="checkbox" name="situacao" value="Usucapião"><span>Usucapião</span></label>
+            <label class="check-opt"><input type="checkbox" name="situacao" value="Regularização de imóvel"><span>Regularização</span></label>
+            <label class="check-opt"><input type="checkbox" name="situacao" value="Averbação"><span>Averbação</span></label>
+            <label class="check-opt"><input type="checkbox" name="situacao" value="Baixa de usufruto"><span>Baixa de usufruto</span></label>
+            <label class="check-opt"><input type="checkbox" name="situacao" value="Inventário"><span>Inventário</span></label>
+            <label class="check-opt"><input type="checkbox" name="situacao" value="Retificação de área"><span>Retificação de área</span></label>
+            <label class="check-opt"><input type="checkbox" name="situacao" value="Cancelamento de gravame"><span>Cancelamento de gravame</span></label>
+            <label class="check-opt"><input type="checkbox" name="situacao" value="Não sei — preciso de orientação"><span>Não sei — preciso de orientação</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Descreva a situação com suas próprias palavras <span style="color:#C9A84C">*</span></label>
+          <textarea name="descricao" required placeholder="Quanto mais detalhes, melhor conseguimos preparar nossa conversa. Não precisa usar termos jurídicos." required></textarea>
+        </div>
+
+        <div class="field">
+          <label>Como chegou até nós?</label>
+          <select name="origem">
+            <option value="">Selecione</option>
+            <option>Indicação</option>
+            <option>Google</option>
+            <option>Instagram</option>
+            <option>Outro</option>
+          </select>
+        </div>
+
+        <p class="privacy-txt">As informações fornecidas destinam-se exclusivamente à triagem do atendimento. Nenhum dado é compartilhado com terceiros. O preenchimento deste formulário não implica contratação de serviços advocatícios nem estabelece relação advogado-cliente.</p>
+        <button type="submit" class="btn-enviar">Enviar descrição da situação</button>
+      </form>
+    </div>
+
+    <div class="success-box" id="form-success">
+      <div style="font-size:2.5rem">✓</div>
+      <h3>Recebemos sua solicitação</h3>
+      <p>Entraremos em contato em até 24 horas úteis pelo WhatsApp ou e-mail informado.<br>Analisaremos sua situação e te explicamos o que precisa ser feito.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 MPF Advocacia · OAB/SP nº 339.290</p>
+  <a href="index.html">← Página inicial</a>
+</footer>
+
+</body>
+</html>
