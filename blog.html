@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Blog jurídico MPF Advocacia — artigos sobre direito imobiliário, civil e família em linguagem acessível.">
+<title>Blog — MPF Advocacia</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TYG3H7S25Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TYG3H7S25Z');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --azul: #004A95; --azul-escuro: #002F5F; --dourado: #C9A84C;
+  --off-white: #F7F5F0; --cinza: #6B7280; --cinza-claro: #E2E2E2;
+  --texto: #1C1C1E; --branco: #FFFFFF;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Lato', sans-serif; background: var(--off-white); color: var(--texto); }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 60px; display: flex; align-items: center; justify-content: space-between; background: #ffffff; border-bottom: 2px solid #C9A84C; box-shadow: 0 2px 20px rgba(0,47,95,0.08); }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--azul-escuro); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.nav-logo span { color: var(--dourado); }
+.nav-back { font-size: 0.78rem; color: rgba(0,47,95,0.5); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
+.nav-back:hover { color: var(--dourado); }
+
+.hero {
+  background: var(--azul-escuro); padding: 120px 60px 60px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-tag { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dourado); margin-bottom: 14px; position: relative; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--branco); position: relative; margin-bottom: 12px; }
+.hero p { font-size: 0.95rem; color: rgba(255,255,255,0.55); font-weight: 300; position: relative; max-width: 500px; margin: 0 auto; line-height: 1.7; }
+
+.blog-container { max-width: 1100px; margin: 0 auto; padding: 64px 40px 80px; }
+
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px; }
+
+.post-card {
+  background: var(--branco); border-radius: 4px; overflow: hidden;
+  border: 1px solid var(--cinza-claro); border-top: 4px solid var(--dourado);
+  transition: box-shadow 0.2s; text-decoration: none; display: block; color: var(--texto);
+}
+.post-card:hover { box-shadow: 0 8px 32px rgba(0,47,95,0.1); transform: translateY(-2px); }
+
+.post-card-body { padding: 28px 24px; }
+.post-tag { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dourado); font-weight: 700; margin-bottom: 10px; display: block; }
+.post-titulo { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--azul-escuro); line-height: 1.3; margin-bottom: 12px; }
+.post-resumo { font-size: 0.85rem; color: var(--cinza); line-height: 1.7; font-weight: 300; margin-bottom: 18px; }
+.post-meta { font-size: 0.7rem; color: var(--cinza); letter-spacing: 0.04em; display: flex; align-items: center; justify-content: space-between; }
+.post-ler { font-size: 0.7rem; color: var(--dourado); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+
+.cta-section { background: var(--azul-escuro); padding: 60px 40px; text-align: center; margin-top: 40px; border-radius: 4px; }
+.cta-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--branco); margin-bottom: 10px; }
+.cta-section p { font-size: 0.88rem; color: rgba(255,255,255,0.55); margin-bottom: 24px; font-weight: 300; }
+.btn-cta { display: inline-block; padding: 14px 32px; background: var(--dourado); color: var(--azul-escuro); font-family: 'Lato', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 3px; border-bottom: 3px solid rgba(0,0,0,0.15); }
+.btn-cta:hover { background: #e0bc5a; }
+
+footer { background: var(--azul-escuro); padding: 28px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(201,168,76,0.2); }
+footer p { font-size: 0.7rem; color: rgba(255,255,255,0.25); }
+footer a { font-size: 0.7rem; color: rgba(255,255,255,0.3); text-decoration: none; }
+footer a:hover { color: var(--dourado); }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .hero { padding: 100px 20px 50px; }
+  .blog-container { padding: 40px 20px 60px; }
+  footer { flex-direction: column; gap: 10px; padding: 24px 20px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html"><img src="data:image/png;base64,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" style="width:30px;height:auto;vertical-align:middle;margin-right:10px;">MPF <span>Advocacia</span></a>
+  <a class="nav-back" href="index.html">← Página inicial</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">Blog Jurídico</div>
+  <h1>Direito explicado com clareza</h1>
+  <p>Artigos sobre direito imobiliário, civil e família — escritos para quem precisa entender, não apenas para quem já sabe.</p>
+</div>
+
+<div class="blog-container">
+  <div class="blog-grid">
+
+    <a class="post-card" href="itbi-repeticao-indevito.html">
+      <div class="post-card-body">
+        <span class="post-tag">Direito Imobiliário · ITBI</span>
+        <div class="post-titulo">Pagou ITBI a mais? Você pode ter direito a receber de volta</div>
+        <div class="post-resumo">Se a prefeitura cobrou o ITBI com base no valor venal de referência — superior ao valor real da transação — a tese do STJ garante o direito à restituição. Veja como funciona.</div>
+        <div class="post-meta">
+          <span>Junho 2026</span>
+          <span class="post-ler">Ler artigo →</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="post-card" href="itbi-mandado-seguranca.html">
+      <div class="post-card-body">
+        <span class="post-tag">Direito Imobiliário · ITBI</span>
+        <div class="post-titulo">A prefeitura quer cobrar ITBI acima do valor da escritura? Saiba como se defender</div>
+        <div class="post-resumo">Antes de lavrar a escritura, a prefeitura pode arbitrar um valor maior e exigir ITBI sobre ele. O mandado de segurança é o caminho para garantir o cálculo correto — sobre o preço real pago.</div>
+        <div class="post-meta">
+          <span>Junho 2026</span>
+          <span class="post-ler">Ler artigo →</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="cta-section">
+    <h3>Tem uma dúvida jurídica?</h3>
+    <p>Preencha o formulário e entraremos em contato em até 24 horas úteis.</p>
+    <a class="btn-cta" href="index.html#contato">Falar com um advogado</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 MPF Advocacia · OAB/SP nº 339.290</p>
+  <a href="index.html">← Página inicial</a>
+</footer>
+
+</body>
+</html>
