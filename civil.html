@@ -11,55 +11,31 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MPF Advocacia — Direito de Família</title>
-<meta name="description" content="Assessoria jurídica em divórcio consensual, inventário e partilha de bens. Atendimento direto, sem litígio desnecessário.">
+<title>MPF Advocacia — Direito Civil</title>
+<meta name="description" content="Assessoria jurídica em direito civil: cobrança, execução de dívidas, contratos e indenizações. Atendimento online.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --azul: #004A95;
-  --azul-escuro: #002F5F;
-  --azul-claro: #E8F0FA;
-  --dourado: #C9A84C;
-  --off-white: #F7F5F0;
-  --cinza: #6B7280;
-  --cinza-claro: #E2E2E2;
-  --texto: #1C1C1E;
-  --branco: #FFFFFF;
+  --azul: #004A95; --azul-escuro: #002F5F; --azul-claro: #E8F0FA;
+  --dourado: #C9A84C; --off-white: #F7F5F0; --cinza: #6B7280;
+  --cinza-claro: #E2E2E2; --texto: #1C1C1E; --branco: #FFFFFF;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+body { font-family: 'Lato', sans-serif; background: var(--off-white); color: var(--texto); }
 
-body {
-  font-family: 'Lato', sans-serif;
-  background: var(--off-white);
-  color: var(--texto);
-  font-size: 16px;
-}
-
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 18px 60px; display: flex; align-items: center; justify-content: space-between;
-  background: #ffffff; border-bottom: 2px solid #C9A84C; box-shadow: 0 2px 20px rgba(0,47,95,0.08);
-}
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 60px; display: flex; align-items: center; justify-content: space-between; background: #ffffff; border-bottom: 2px solid #C9A84C; box-shadow: 0 2px 20px rgba(0,47,95,0.08); }
 .nav-left { display: flex; align-items: center; gap: 40px; }
-.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: #002F5F; text-decoration: none; display: flex; align-items: center; gap: 10px; }
-.nav-logo span { color: #C9A84C; }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--azul-escuro); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.nav-logo span { color: var(--dourado); }
 .nav-links { display: flex; align-items: center; gap: 28px; }
-.nav-links a { font-size: 0.85rem; color: #002F5F; text-decoration: none; letter-spacing: 0.04em; font-family: 'Lato', sans-serif; font-weight: 600; transition: color 0.2s; }
-.nav-links a:hover { color: #C9A84C; }
-.nav-cta { font-size: 0.78rem; color: #ffffff; background: #002F5F; padding: 10px 22px; border-radius: 3px; text-decoration: none; letter-spacing: 0.05em; font-weight: 700; border-bottom: 2px solid #C9A84C; }
-.nav-cta:hover { background: #004A95; }
+.nav-links a { font-size: 0.85rem; color: var(--azul-escuro); text-decoration: none; letter-spacing: 0.04em; font-family: 'Lato', sans-serif; font-weight: 600; transition: color 0.2s; }
+.nav-links a:hover { color: var(--dourado); }
+.nav-cta { font-size: 0.78rem; color: var(--branco); background: var(--azul-escuro); padding: 10px 22px; border-radius: 3px; text-decoration: none; letter-spacing: 0.05em; font-weight: 700; border-bottom: 2px solid var(--dourado); }
+.nav-cta:hover { background: var(--azul); }
 
-.page-hero {
-  background: var(--azul-escuro); padding: 130px 60px 70px; text-align: center;
-  position: relative; overflow: hidden;
-}
-.page-hero::before {
-  content: ''; position: absolute; inset: 0;
-  background-image: linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
+.page-hero { background: var(--azul-escuro); padding: 130px 60px 70px; text-align: center; position: relative; overflow: hidden; }
+.page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px); background-size: 60px 60px; }
 .page-hero-tag { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dourado); margin-bottom: 16px; position: relative; }
 .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 300; color: var(--branco); line-height: 1.2; position: relative; max-width: 700px; margin: 0 auto 16px; }
 .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.55); font-weight: 300; position: relative; max-width: 560px; margin: 0 auto; line-height: 1.7; }
@@ -81,26 +57,16 @@ nav {
 .form-header { text-align: center; margin-bottom: 48px; }
 .form-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--branco); margin-bottom: 10px; }
 .form-header p { font-size: 0.9rem; color: rgba(255,255,255,0.5); font-weight: 300; }
-
 .form-card { background: var(--branco); border-radius: 4px; padding: 48px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
 .section-label { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--azul); font-weight: 700; margin-bottom: 18px; margin-top: 28px; display: flex; align-items: center; gap: 10px; }
 .section-label:first-child { margin-top: 0; }
 .section-label::after { content: ''; flex: 1; height: 1px; background: var(--cinza-claro); }
-
 .field { margin-bottom: 18px; }
 .field label { display: block; font-size: 0.82rem; color: var(--cinza); margin-bottom: 7px; font-weight: 400; }
-.field input, .field select, .field textarea {
-  width: 100%; padding: 12px 16px; border: 1.5px solid var(--cinza-claro); background: var(--off-white);
-  font-family: 'Lato', sans-serif; font-size: 0.9rem; color: var(--texto); border-radius: 3px;
-  transition: border-color 0.2s; outline: none; appearance: none;
-}
+.field input, .field select, .field textarea { width: 100%; padding: 12px 16px; border: 1.5px solid var(--cinza-claro); background: var(--off-white); font-family: 'Lato', sans-serif; font-size: 0.9rem; color: var(--texto); border-radius: 3px; transition: border-color 0.2s; outline: none; appearance: none; }
 .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--azul); background: var(--branco); }
 .field textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
-.field select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23004A95' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; cursor: pointer;
-}
-
+.field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23004A95' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; cursor: pointer; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .radio-group { display: flex; flex-wrap: wrap; gap: 10px; }
 .radio-opt { display: flex; align-items: center; gap: 9px; padding: 9px 16px; border: 1.5px solid var(--cinza-claro); border-radius: 3px; cursor: pointer; transition: all 0.2s; background: var(--off-white); }
@@ -109,28 +75,28 @@ nav {
 .radio-opt span { font-size: 0.82rem; color: var(--texto); font-weight: 400; }
 .radio-opt:has(input:checked) { border-color: var(--azul); background: #E8F0FA; }
 .radio-opt:has(input:checked) span { color: var(--azul); font-weight: 700; }
-
 .privacy-txt { font-size: 0.75rem; color: var(--cinza); line-height: 1.7; margin: 24px 0 20px; padding-top: 20px; border-top: 1px solid var(--cinza-claro); }
-.btn-enviar {
-  width: 100%; padding: 17px; background: var(--azul-escuro); color: var(--branco); border: none;
-  font-family: 'Lato', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-  cursor: pointer; border-radius: 3px; border-bottom: 3px solid var(--dourado); transition: background 0.2s;
-}
+.btn-enviar { width: 100%; padding: 17px; background: var(--azul-escuro); color: var(--branco); border: none; font-family: 'Lato', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; border-radius: 3px; border-bottom: 3px solid var(--dourado); transition: background 0.2s; }
 .btn-enviar:hover { background: var(--azul); }
 
-footer { background: var(--azul-escuro); padding: 32px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(201,168,76,0.2); }
-footer p { font-size: 0.72rem; color: rgba(255,255,255,0.25); letter-spacing: 0.04em; }
-footer a { font-size: 0.72rem; color: rgba(255,255,255,0.3); text-decoration: none; }
-footer a:hover { color: var(--dourado); }
+footer { background: var(--azul-escuro); padding: 28px 60px; border-top: 1px solid rgba(201,168,76,0.2); }
+.footer-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 0.72rem; color: rgba(255,255,255,0.4); text-decoration: none; }
+.footer-links a:hover { color: var(--dourado); }
+.footer-bottom { text-align: center; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); }
+.footer-bottom p { font-size: 0.65rem; color: rgba(255,255,255,0.18); letter-spacing: 0.02em; }
 
 @media (max-width: 768px) {
-  nav { padding: 16px 20px; }
+  nav { padding: 16px 20px; flex-direction: column; gap: 12px; }
+  .nav-left { flex-direction: column; gap: 14px; }
   .page-hero { padding: 100px 20px 50px; }
   .servicos-section { padding: 40px 20px; }
   .form-section { padding: 60px 20px; }
   .form-card { padding: 28px 20px; }
   .grid-2 { grid-template-columns: 1fr; }
-  footer { flex-direction: column; gap: 10px; padding: 24px 20px; text-align: center; }
+  footer { padding: 24px 20px; }
+  .footer-top { flex-direction: column; gap: 14px; text-align: center; }
 }
 </style>
 </head>
@@ -150,9 +116,9 @@ footer a:hover { color: var(--dourado); }
 </nav>
 
 <div class="page-hero">
-  <div class="page-hero-tag">Direito de Família</div>
-  <h1>Resolva questões familiares com clareza e sem desgaste desnecessário</h1>
-  <p>Divórcio, inventário e partilha de bens — conduzidos de forma direta, sempre que possível pela via extrajudicial.</p>
+  <div class="page-hero-tag">Direito Civil</div>
+  <h1>Resolva conflitos civis com agilidade e respaldo jurídico</h1>
+  <p>Cobrança de dívidas, revisão de contratos, execução judicial e indenizações — conduzidos de forma direta e objetiva.</p>
 </div>
 
 <div class="servicos-section">
@@ -160,49 +126,49 @@ footer a:hover { color: var(--dourado); }
 
     <div class="servico-card">
       <div class="servico-num">01</div>
-      <div class="servico-nome">Divórcio Consensual</div>
-      <div class="servico-desc">Para casais que já entraram em acordo sobre a separação e querem formalizar de forma rápida. Quando houver filhos menores ou incapazes, será necessária análise da via judicial adequada, ainda que exista acordo entre as partes.</div>
+      <div class="servico-nome">Cobrança e Execução de Dívidas</div>
+      <div class="servico-desc">Para quem tem valores a receber e quer utilizar os meios legais para recuperá-los.</div>
       <ul class="servico-inclui">
-        <li>Elaboração do acordo de divórcio</li>
-        <li>Partilha de bens e definição de guarda, quando houver filhos</li>
-        <li>Via extrajudicial (cartório) quando não há filhos menores</li>
-        <li>Acompanhamento até a averbação no registro civil</li>
+        <li>Análise da dívida e documentação existente</li>
+        <li>Notificação extrajudicial prévia</li>
+        <li>Ajuizamento de ação de cobrança ou execução</li>
+        <li>Busca de bens e bloqueio judicial quando necessário</li>
       </ul>
     </div>
 
     <div class="servico-card">
       <div class="servico-num">02</div>
-      <div class="servico-nome">Inventário Extrajudicial</div>
-      <div class="servico-desc">Quando há acordo entre os herdeiros, o inventário pode ser feito diretamente em cartório — mais rápido e menos custoso.</div>
+      <div class="servico-nome">Revisão e Elaboração de Contratos</div>
+      <div class="servico-desc">Para quem vai assinar ou já assinou um contrato e quer saber se está protegido.</div>
       <ul class="servico-inclui">
-        <li>Levantamento de bens e documentação do espólio</li>
-        <li>Elaboração da minuta de partilha</li>
-        <li>Orientação sobre ITCMD e demais tributos</li>
-        <li>Acompanhamento até a escritura de partilha</li>
+        <li>Análise de cláusulas abusivas ou omissas</li>
+        <li>Elaboração de contratos sob medida</li>
+        <li>Orientação sobre riscos e obrigações</li>
+        <li>Parecer jurídico por escrito</li>
       </ul>
     </div>
 
     <div class="servico-card">
       <div class="servico-num">03</div>
-      <div class="servico-nome">Inventário Judicial</div>
-      <div class="servico-desc">Quando há testamento, herdeiro menor ou divergência entre as partes, o inventário segue pela via judicial.</div>
+      <div class="servico-nome">Indenização por Danos</div>
+      <div class="servico-desc">Para quem sofreu prejuízo — material ou moral — em razão de conduta de terceiro.</div>
       <ul class="servico-inclui">
-        <li>Análise da situação patrimonial e sucessória</li>
-        <li>Condução do processo judicial de inventário</li>
-        <li>Representação dos interesses do herdeiro</li>
-        <li>Acompanhamento até a partilha final</li>
+        <li>Análise de viabilidade do pedido indenizatório</li>
+        <li>Levantamento de provas e documentação</li>
+        <li>Tentativa de acordo extrajudicial</li>
+        <li>Ajuizamento de ação quando necessário</li>
       </ul>
     </div>
 
     <div class="servico-card">
       <div class="servico-num">04</div>
-      <div class="servico-nome">Partilha de Bens</div>
-      <div class="servico-desc">Para quem precisa formalizar a divisão de patrimônio — em divórcio, dissolução de união estável ou herança.</div>
+      <div class="servico-nome">Resolução de Conflitos Contratuais</div>
+      <div class="servico-desc">Para quem enfrenta descumprimento de contrato pela outra parte.</div>
       <ul class="servico-inclui">
-        <li>Levantamento e avaliação dos bens a partilhar</li>
-        <li>Elaboração do termo de partilha</li>
-        <li>Orientação sobre tributos incidentes</li>
-        <li>Acompanhamento no registro dos bens partilhados</li>
+        <li>Análise do contrato e do inadimplemento</li>
+        <li>Notificação formal da parte contrária</li>
+        <li>Negociação e tentativa de acordo</li>
+        <li>Ação judicial de rescisão ou cumprimento forçado</li>
       </ul>
     </div>
 
@@ -215,40 +181,27 @@ footer a:hover { color: var(--dourado); }
       <h2>Solicite seu atendimento</h2>
       <p>Preencha o formulário. Entraremos em contato em até 24 horas úteis.</p>
     </div>
-
     <div class="form-card">
       <form action="https://formspree.io/f/xkoaoljq" method="POST">
-        <input type="hidden" name="area" value="Direito de Família">
-
+        <input type="hidden" name="area" value="Direito Civil">
         <div class="section-label">Seus dados</div>
         <div class="grid-2">
           <div class="field"><label>Nome completo <span style="color:#C9A84C">*</span></label><input type="text" name="nome" placeholder="Como prefere ser chamado(a)" required></div>
           <div class="field"><label>WhatsApp <span style="color:#C9A84C">*</span></label><input type="tel" name="whatsapp" placeholder="(00) 00000-0000" required></div>
         </div>
         <div class="field"><label>E-mail <span style="color:#C9A84C">*</span></label><input type="email" name="email" placeholder="seu@email.com" required></div>
-
         <div class="section-label">Sobre o caso</div>
         <div class="field">
           <label>Assunto de interesse <span style="color:#C9A84C">*</span></label>
           <div class="radio-group">
-            <label class="radio-opt"><input type="radio" name="servico" required value="Divórcio consensual"><span>Divórcio consensual</span></label>
-            <label class="radio-opt"><input type="radio" name="servico" value="Inventário extrajudicial"><span>Inventário extrajudicial</span></label>
-            <label class="radio-opt"><input type="radio" name="servico" value="Inventário judicial"><span>Inventário judicial</span></label>
-            <label class="radio-opt"><input type="radio" name="servico" value="Partilha de bens"><span>Partilha de bens</span></label>
-            <label class="radio-opt"><input type="radio" name="servico" value="Não sei ainda"><span>Não sei ainda</span></label>
+            <label class="radio-opt"><input type="radio" name="servico" required value="Cobrança ou execução de dívida"><span>Cobrança / execução de dívida</span></label>
+            <label class="radio-opt"><input type="radio" name="servico" value="Revisão ou elaboração de contrato"><span>Revisão / elaboração de contrato</span></label>
+            <label class="radio-opt"><input type="radio" name="servico" value="Indenização por danos"><span>Indenização por danos</span></label>
+            <label class="radio-opt"><input type="radio" name="servico" value="Conflito contratual"><span>Conflito contratual</span></label>
+            <label class="radio-opt"><input type="radio" name="servico" value="Outro"><span>Outro</span></label>
           </div>
         </div>
-        <div class="field">
-          <label>Há acordo entre as partes envolvidas?</label>
-          <select name="ha_acordo">
-            <option value="">Selecione</option>
-            <option>Sim, há acordo total</option>
-            <option>Há acordo parcial</option>
-            <option>Não há acordo</option>
-            <option>Ainda não conversamos sobre isso</option>
-          </select>
-        </div>
-        <div class="field"><label>Observações (opcional)</label><textarea name="observacoes" placeholder="Descreva brevemente a sua situação..."></textarea></div>
+        <div class="field"><label>Descreva brevemente a situação <span style="color:#C9A84C">*</span></label><textarea name="descricao" placeholder="O que aconteceu e o que você precisa resolver..." required></textarea></div>
         <div class="field">
           <label>Como chegou até nós?</label>
           <select name="origem">
@@ -259,8 +212,7 @@ footer a:hover { color: var(--dourado); }
             <option>Outro</option>
           </select>
         </div>
-
-        <p class="privacy-txt">As informações fornecidas destinam-se exclusivamente à triagem do atendimento. Os dados informados serão utilizados exclusivamente para triagem do atendimento e contato inicial, observada a legislação de proteção de dados aplicável. O preenchimento deste formulário não implica contratação de serviços advocatícios nem estabelece relação advogado-cliente.</p>
+        <p class="privacy-txt">As informações fornecidas destinam-se exclusivamente à triagem do atendimento e contato inicial, observada a legislação de proteção de dados aplicável. O preenchimento deste formulário não implica contratação de serviços advocatícios nem estabelece relação advogado-cliente.</p>
         <button type="submit" class="btn-enviar">Enviar solicitação de contato</button>
       </form>
     </div>
@@ -268,8 +220,18 @@ footer a:hover { color: var(--dourado); }
 </div>
 
 <footer>
-  <p><a href="mailto:drmfialho@gmail.com" style="color:rgba(255,255,255,0.3);text-decoration:none;">drmfialho@gmail.com</a> &nbsp;·&nbsp; Marcello Paravani Fialho — OAB/SP nº 339.290 &nbsp;·&nbsp; © 2026 MPF Advocacia &nbsp;·&nbsp; <a href="politica-de-privacidade.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Política de Privacidade</a></p>
-  <a href="index.html">← Página inicial</a>
+  <div class="footer-top">
+    <div class="nav-logo" style="color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.1rem;display:flex;align-items:center;gap:8px;"><img src="data:image/png;base64,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" style="width:24px;height:auto;">MPF <span style="color:#C9A84C;">Advocacia</span></div>
+    <div class="footer-links">
+      <a href="cliente.html">Imobiliário</a>
+      <a href="familia.html">Família</a>
+      <a href="civil.html">Civil</a>
+      <a href="blog.html">Blog</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p><a href="mailto:drmfialho@gmail.com" style="color:rgba(255,255,255,0.3);text-decoration:none;">drmfialho@gmail.com</a> &nbsp;·&nbsp; Marcello Paravani Fialho — OAB/SP nº 339.290 &nbsp;·&nbsp; © 2026 MPF Advocacia</p>
+  </div>
 </footer>
 
 </body>
