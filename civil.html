@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MPF Advocacia — Direito Civil</title>
-<meta name="description" content="Assessoria jurídica em direito civil: cobrança, execução de dívidas, contratos e indenizações. Atendimento online.">
+<meta name="description" content="Triagem jurídica express, golpe via Pix, desbloqueio de contas, cobrança de dívidas, contratos e indenizações. Atendimento online.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -41,16 +41,24 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 60
 .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.55); font-weight: 300; position: relative; max-width: 560px; margin: 0 auto; line-height: 1.7; }
 
 .servicos-section { max-width: 1200px; margin: 0 auto; padding: 64px 40px; }
-.servicos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
 
-.servico-card { background: var(--branco); border: 1px solid var(--cinza-claro); border-top: 4px solid var(--dourado); border-radius: 4px; padding: 36px 32px; transition: box-shadow 0.2s; }
-.servico-card:hover { box-shadow: 0 8px 32px rgba(0,47,95,0.08); }
-.servico-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: rgba(0,74,149,0.12); line-height: 1; margin-bottom: 12px; }
-.servico-nome { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 500; color: var(--azul-escuro); margin-bottom: 10px; line-height: 1.3; }
-.servico-desc { font-size: 0.9rem; color: var(--cinza); line-height: 1.7; font-weight: 300; margin-bottom: 20px; }
-.servico-inclui { list-style: none; border-top: 1px solid var(--cinza-claro); padding-top: 16px; }
-.servico-inclui li { font-size: 0.85rem; color: var(--cinza); padding: 6px 0; display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; font-weight: 300; }
-.servico-inclui li::before { content: '✓'; color: var(--dourado); flex-shrink: 0; font-weight: 700; margin-top: 1px; }
+.bloco-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dourado); font-weight: 700; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+.bloco-label::after { content: ''; flex: 1; height: 1px; background: var(--cinza-claro); }
+.bloco-titulo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--azul-escuro); margin-bottom: 28px; }
+
+.servicos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 56px; }
+
+.servico-card { background: var(--branco); border: 1px solid var(--cinza-claro); border-top: 4px solid var(--dourado); border-radius: 4px; padding: 32px 28px; transition: box-shadow 0.2s; }
+.servico-card.destaque { border-top-color: var(--azul-escuro); background: linear-gradient(135deg, var(--branco) 0%, #f0f4fa 100%); }
+.servico-card:hover { box-shadow: 0 8px 32px rgba(0,47,95,0.1); }
+.servico-badge { display: inline-block; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; background: var(--azul-escuro); color: var(--dourado); padding: 3px 10px; border-radius: 2px; margin-bottom: 14px; font-weight: 700; }
+.servico-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: rgba(0,74,149,0.12); line-height: 1; margin-bottom: 10px; }
+.servico-nome { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--azul-escuro); margin-bottom: 8px; line-height: 1.3; }
+.servico-desc { font-size: 0.88rem; color: var(--cinza); line-height: 1.7; font-weight: 300; margin-bottom: 18px; }
+.servico-inclui { list-style: none; border-top: 1px solid var(--cinza-claro); padding-top: 14px; }
+.servico-inclui li { font-size: 0.82rem; color: var(--cinza); padding: 5px 0; display: flex; align-items: flex-start; gap: 9px; line-height: 1.5; font-weight: 300; }
+.servico-inclui li::before { content: '✓'; color: var(--dourado); flex-shrink: 0; font-weight: 700; }
+.servico-prazo { display: inline-block; margin-top: 14px; font-size: 0.72rem; color: var(--azul); font-weight: 700; letter-spacing: 0.06em; background: var(--azul-claro); padding: 4px 10px; border-radius: 2px; }
 
 .form-section { background: var(--azul-escuro); padding: 80px 40px; }
 .form-container { max-width: 760px; margin: 0 auto; }
@@ -107,27 +115,96 @@ footer { background: var(--azul-escuro); padding: 28px 60px; border-top: 1px sol
     <a class="nav-logo" href="index.html"><img src="data:image/png;base64,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" style="width:30px;height:auto;vertical-align:middle;margin-right:10px;">MPF <span>Advocacia</span></a>
     <div class="nav-links">
       <a href="cliente.html">Imobiliário</a>
-      <a href="familia.html">Família</a>
       <a href="civil.html">Civil</a>
+      <a href="familia.html">Família</a>
       <a href="blog.html">Blog</a>
     </div>
   </div>
-  <a class="nav-cta" href="index.html#contato">Falar com um advogado</a>
+  <a class="nav-cta" href="#contato">Falar com um advogado</a>
 </nav>
 
 <div class="page-hero">
   <div class="page-hero-tag">Direito Civil</div>
-  <h1>Resolva conflitos civis com agilidade e respaldo jurídico</h1>
-  <p>Cobrança de dívidas, revisão de contratos, execução judicial e indenizações — conduzidos de forma direta e objetiva.</p>
+  <h1>Resolva seu problema jurídico com rapidez e respaldo técnico</h1>
+  <p>De uma análise express em 24h até a condução de ações complexas — atendimento direto, objetivo e 100% online.</p>
 </div>
 
 <div class="servicos-section">
+
+  <!-- BLOCO 1: URGÊNCIA -->
+  <div class="bloco-label">Serviços com retorno rápido</div>
+  <div class="bloco-titulo">Para quem precisa de uma resposta agora</div>
+
+  <div class="servicos-grid">
+
+    <div class="servico-card destaque">
+      <div class="servico-badge">⚡ Mais procurado</div>
+      <div class="servico-num">01</div>
+      <div class="servico-nome">Triagem Jurídica Express</div>
+      <div class="servico-desc">Tem um problema jurídico e não sabe se vale a pena entrar com ação? Em 24h você recebe uma análise clara sobre viabilidade, caminho e custo estimado.</div>
+      <ul class="servico-inclui">
+        <li>Análise do caso com base nos documentos enviados</li>
+        <li>Parecer por escrito sobre viabilidade jurídica</li>
+        <li>Indicação do caminho recomendado</li>
+        <li>Estimativa de custo e prazo</li>
+      </ul>
+      <div class="servico-prazo">⏱ Resposta em até 24h</div>
+    </div>
+
+    <div class="servico-card destaque">
+      <div class="servico-badge">🚨 Alta demanda</div>
+      <div class="servico-num">02</div>
+      <div class="servico-nome">Golpe via Pix e Fraude Bancária</div>
+      <div class="servico-desc">Sofreu um golpe e o banco não está devolvendo o dinheiro? A responsabilidade das instituições financeiras está prevista em lei — e há mecanismos jurídicos para buscar a restituição.</div>
+      <ul class="servico-inclui">
+        <li>Análise da situação e viabilidade de ressarcimento</li>
+        <li>Comunicação formal ao banco e ao Banco Central</li>
+        <li>Ação judicial quando necessário</li>
+        <li>Acompanhamento até a resolução</li>
+      </ul>
+      <div class="servico-prazo">⏱ Análise inicial em 24h</div>
+    </div>
+
+    <div class="servico-card destaque">
+      <div class="servico-badge">🔓 Urgente</div>
+      <div class="servico-num">03</div>
+      <div class="servico-nome">Desbloqueio de Conta em Plataforma Digital</div>
+      <div class="servico-desc">Conta bloqueada no banco, marketplace, rede social ou plataforma de trabalho? O bloqueio sem aviso ou critério pode ser ilegal — e há medida judicial para reativação.</div>
+      <ul class="servico-inclui">
+        <li>Análise da situação e fundamento jurídico</li>
+        <li>Notificação extrajudicial à plataforma</li>
+        <li>Ação de obrigação de fazer quando necessário</li>
+        <li>Pedido de liminar para reativação urgente</li>
+      </ul>
+      <div class="servico-prazo">⏱ Análise inicial em 24h</div>
+    </div>
+
+    <div class="servico-card destaque">
+      <div class="servico-badge">💰 Alta demanda</div>
+      <div class="servico-num">04</div>
+      <div class="servico-nome">Impenhorabilidade Salarial</div>
+      <div class="servico-desc">Teve o salário ou conta bloqueados por dívida? A lei protege até 50 salários mínimos de penhora. Se o bloqueio foi indevido, é possível contestar judicialmente.</div>
+      <ul class="servico-inclui">
+        <li>Análise do bloqueio e da origem da dívida</li>
+        <li>Petição de exceção de impenhorabilidade</li>
+        <li>Impugnação à penhora quando cabível</li>
+        <li>Pedido de desbloqueio em caráter urgente</li>
+      </ul>
+      <div class="servico-prazo">⏱ Petição em 48h</div>
+    </div>
+
+  </div>
+
+  <!-- BLOCO 2: TICKET MAIOR -->
+  <div class="bloco-label">Serviços de maior complexidade</div>
+  <div class="bloco-titulo">Para quem precisa de acompanhamento completo</div>
+
   <div class="servicos-grid">
 
     <div class="servico-card">
-      <div class="servico-num">01</div>
+      <div class="servico-num">05</div>
       <div class="servico-nome">Cobrança e Execução de Dívidas</div>
-      <div class="servico-desc">Para quem tem valores a receber e quer utilizar os meios legais para recuperá-los.</div>
+      <div class="servico-desc">Tem valores a receber e quer utilizar os meios legais para recuperá-los.</div>
       <ul class="servico-inclui">
         <li>Análise da dívida e documentação existente</li>
         <li>Notificação extrajudicial prévia</li>
@@ -137,9 +214,9 @@ footer { background: var(--azul-escuro); padding: 28px 60px; border-top: 1px sol
     </div>
 
     <div class="servico-card">
-      <div class="servico-num">02</div>
+      <div class="servico-num">06</div>
       <div class="servico-nome">Revisão e Elaboração de Contratos</div>
-      <div class="servico-desc">Para quem vai assinar ou já assinou um contrato e quer saber se está protegido.</div>
+      <div class="servico-desc">Vai assinar ou já assinou um contrato e quer saber se está protegido.</div>
       <ul class="servico-inclui">
         <li>Análise de cláusulas abusivas ou omissas</li>
         <li>Elaboração de contratos sob medida</li>
@@ -149,9 +226,9 @@ footer { background: var(--azul-escuro); padding: 28px 60px; border-top: 1px sol
     </div>
 
     <div class="servico-card">
-      <div class="servico-num">03</div>
+      <div class="servico-num">07</div>
       <div class="servico-nome">Indenização por Danos</div>
-      <div class="servico-desc">Para quem sofreu prejuízo — material ou moral — em razão de conduta de terceiro.</div>
+      <div class="servico-desc">Sofreu prejuízo material ou moral em razão de conduta de terceiro.</div>
       <ul class="servico-inclui">
         <li>Análise de viabilidade do pedido indenizatório</li>
         <li>Levantamento de provas e documentação</li>
@@ -161,18 +238,19 @@ footer { background: var(--azul-escuro); padding: 28px 60px; border-top: 1px sol
     </div>
 
     <div class="servico-card">
-      <div class="servico-num">04</div>
+      <div class="servico-num">08</div>
       <div class="servico-nome">Resolução de Conflitos Contratuais</div>
-      <div class="servico-desc">Para quem enfrenta descumprimento de contrato pela outra parte.</div>
+      <div class="servico-desc">Enfrenta descumprimento de contrato pela outra parte.</div>
       <ul class="servico-inclui">
         <li>Análise do contrato e do inadimplemento</li>
         <li>Notificação formal da parte contrária</li>
         <li>Negociação e tentativa de acordo</li>
-        <li>Ação judicial de rescisão ou cumprimento forçado</li>
+        <li>Ação de rescisão ou cumprimento forçado</li>
       </ul>
     </div>
 
   </div>
+
 </div>
 
 <div class="form-section" id="contato">
@@ -194,9 +272,13 @@ footer { background: var(--azul-escuro); padding: 28px 60px; border-top: 1px sol
         <div class="field">
           <label>Assunto de interesse <span style="color:#C9A84C">*</span></label>
           <div class="radio-group">
-            <label class="radio-opt"><input type="radio" name="servico" required value="Cobrança ou execução de dívida"><span>Cobrança / execução de dívida</span></label>
-            <label class="radio-opt"><input type="radio" name="servico" value="Revisão ou elaboração de contrato"><span>Revisão / elaboração de contrato</span></label>
-            <label class="radio-opt"><input type="radio" name="servico" value="Indenização por danos"><span>Indenização por danos</span></label>
+            <label class="radio-opt"><input type="radio" name="servico" required value="Triagem jurídica express"><span>Triagem express (24h)</span></label>
+            <label class="radio-opt"><input type="radio" name="servico" value="Golpe via Pix ou fraude bancária"><span>Golpe / fraude bancária</span></label>
+            <label class="radio-opt"><input type="radio" name="servico" value="Desbloqueio de conta"><span>Desbloqueio de conta</span></label>
+            <label class="radio-opt"><input type="radio" name="servico" value="Impenhorabilidade salarial"><span>Salário bloqueado</span></label>
+            <label class="radio-opt"><input type="radio" name="servico" value="Cobrança ou execução de dívida"><span>Cobrança / dívida</span></label>
+            <label class="radio-opt"><input type="radio" name="servico" value="Revisão ou elaboração de contrato"><span>Contratos</span></label>
+            <label class="radio-opt"><input type="radio" name="servico" value="Indenização por danos"><span>Indenização</span></label>
             <label class="radio-opt"><input type="radio" name="servico" value="Conflito contratual"><span>Conflito contratual</span></label>
             <label class="radio-opt"><input type="radio" name="servico" value="Outro"><span>Outro</span></label>
           </div>
@@ -221,16 +303,16 @@ footer { background: var(--azul-escuro); padding: 28px 60px; border-top: 1px sol
 
 <footer>
   <div class="footer-top">
-    <div class="nav-logo" style="color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.1rem;display:flex;align-items:center;gap:8px;"><img src="data:image/png;base64,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" style="width:24px;height:auto;">MPF <span style="color:#C9A84C;">Advocacia</span></div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#fff;display:flex;align-items:center;gap:8px;"><img src="data:image/png;base64,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" style="width:24px;height:auto;">MPF <span style="color:#C9A84C;">Advocacia</span></div>
     <div class="footer-links">
       <a href="cliente.html">Imobiliário</a>
-      <a href="familia.html">Família</a>
       <a href="civil.html">Civil</a>
+      <a href="familia.html">Família</a>
       <a href="blog.html">Blog</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <p><a href="mailto:drmfialho@gmail.com" style="color:rgba(255,255,255,0.3);text-decoration:none;">drmfialho@gmail.com</a> &nbsp;·&nbsp; Marcello Paravani Fialho — OAB/SP nº 339.290 &nbsp;·&nbsp; © 2026 MPF Advocacia</p>
+    <p><a href="mailto:drmfialho@gmail.com" style="color:rgba(255,255,255,0.3);text-decoration:none;">drmfialho@gmail.com</a> &nbsp;·&nbsp; Marcello Paravani Fialho — OAB/SP nº 339.290 &nbsp;·&nbsp; © 2026 MPF Advocacia &nbsp;·&nbsp; <a href="politica-de-privacidade.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Política de Privacidade</a></p>
   </div>
 </footer>
 
