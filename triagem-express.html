@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TYG3H7S25Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TYG3H7S25Z');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triagem Jurídica Express — MPF Advocacia</title>
+<meta name="description" content="Tem um problema jurídico e não sabe se vale a pena entrar com ação? Em até 24 horas úteis você recebe um parecer claro, objetivo e por escrito. R$199. A partir de R$97.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --azul: #004A95;
+  --azul-escuro: #002F5F;
+  --dourado: #C9A84C;
+  --off-white: #F7F5F0;
+  --cinza: #6B7280;
+  --cinza-claro: #E2E2E2;
+  --texto: #1C1C1E;
+  --branco: #FFFFFF;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Lato', sans-serif; background: var(--off-white); color: var(--texto); }
+
+/* NAV MINIMALISTA */
+nav {
+  padding: 16px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--branco); border-bottom: 2px solid var(--dourado);
+}
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--azul-escuro); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.nav-logo span { color: var(--dourado); }
+.nav-voltar { font-size: 0.75rem; color: var(--cinza); text-decoration: none; }
+.nav-voltar:hover { color: var(--dourado); }
+
+/* HERO */
+.hero {
+  background: var(--azul-escuro);
+  padding: 80px 40px 70px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.4);
+  color: var(--dourado);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  position: relative;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: var(--branco);
+  line-height: 1.15;
+  max-width: 780px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+.hero h1 em {
+  color: var(--dourado);
+  font-style: normal;
+}
+.hero-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  font-weight: 300;
+  max-width: 560px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+  position: relative;
+}
+.hero-prazo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.8);
+  position: relative;
+}
+.hero-prazo strong { color: var(--dourado); }
+
+/* COMO FUNCIONA */
+.como-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 72px 40px;
+}
+.section-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dourado);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.section-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--azul-escuro);
+  text-align: center;
+  margin-bottom: 48px;
+}
+.passos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0;
+  position: relative;
+}
+.passos::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--dourado), rgba(201,168,76,0.2));
+}
+.passo {
+  text-align: center;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+.passo-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--azul-escuro);
+  color: var(--dourado);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  border: 3px solid var(--dourado);
+}
+.passo-titulo {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+.passo-desc {
+  font-size: 0.82rem;
+  color: var(--cinza);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* PARA QUEM */
+.para-quem {
+  background: var(--branco);
+  padding: 72px 40px;
+  border-top: 1px solid var(--cinza-claro);
+  border-bottom: 1px solid var(--cinza-claro);
+}
+.para-quem-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.casos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 40px;
+}
+.caso-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid var(--cinza-claro);
+  border-radius: 4px;
+  background: var(--off-white);
+}
+.caso-icone {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.caso-texto {
+  font-size: 0.88rem;
+  color: var(--texto);
+  line-height: 1.6;
+  font-weight: 300;
+}
+.caso-texto strong {
+  font-weight: 700;
+  color: var(--azul-escuro);
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* O QUE VOCÊ RECEBE */
+.entrega-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 72px 40px;
+}
+.entrega-box {
+  background: var(--azul-escuro);
+  border-radius: 4px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.entrega-lista {
+  list-style: none;
+}
+.entrega-lista li {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.85);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+.entrega-lista li::before {
+  content: '✓';
+  color: var(--dourado);
+  flex-shrink: 0;
+  font-weight: 700;
+  margin-top: 1px;
+}
+.entrega-lista li:last-child { border-bottom: none; }
+.entrega-preco {
+  text-align: center;
+}
+.entrega-preco-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 8px;
+}
+.entrega-preco-valor {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--dourado);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.entrega-preco-valor sup {
+  font-size: 1.5rem;
+  vertical-align: super;
+}
+.entrega-preco-obs {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+.btn-contratar {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: var(--dourado);
+  color: var(--azul-escuro);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 3px;
+  border-bottom: 3px solid rgba(0,0,0,0.15);
+  text-align: center;
+  transition: background 0.2s;
+}
+.btn-contratar:hover { background: #e0bc5a; }
+.btn-obs {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* FORM */
+.form-section {
+  background: var(--off-white);
+  padding: 80px 40px;
+  border-top: 1px solid var(--cinza-claro);
+}
+.form-container { max-width: 640px; margin: 0 auto; }
+.form-header { text-align: center; margin-bottom: 40px; }
+.form-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--azul-escuro);
+  margin-bottom: 8px;
+}
+.form-header p { font-size: 0.88rem; color: var(--cinza); font-weight: 300; line-height: 1.6; }
+.form-card {
+  background: var(--branco);
+  border-radius: 4px;
+  padding: 44px;
+  border: 1px solid var(--cinza-claro);
+  border-top: 4px solid var(--dourado);
+  box-shadow: 0 4px 24px rgba(0,47,95,0.06);
+}
+.field { margin-bottom: 18px; }
+.field label { display: block; font-size: 0.8rem; color: var(--cinza); margin-bottom: 7px; font-weight: 400; }
+.field input, .field select, .field textarea {
+  width: 100%; padding: 12px 16px;
+  border: 1.5px solid var(--cinza-claro);
+  background: var(--off-white);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  color: var(--texto);
+  border-radius: 3px;
+  transition: border-color 0.2s;
+  outline: none;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--azul);
+  background: var(--branco);
+}
+.field textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.privacy-txt {
+  font-size: 0.72rem; color: var(--cinza); line-height: 1.7;
+  margin: 20px 0 18px; padding-top: 18px;
+  border-top: 1px solid var(--cinza-claro);
+}
+.btn-enviar {
+  width: 100%; padding: 16px;
+  background: var(--azul-escuro); color: var(--branco);
+  border: none; font-family: 'Lato', sans-serif;
+  font-size: 0.85rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  cursor: pointer; border-radius: 3px;
+  border-bottom: 3px solid var(--dourado);
+  transition: background 0.2s;
+}
+.btn-enviar:hover { background: var(--azul); }
+
+/* FOOTER */
+footer {
+  background: var(--azul-escuro);
+  padding: 24px 40px;
+  border-top: 1px solid rgba(201,168,76,0.2);
+  text-align: center;
+}
+footer p {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.18);
+}
+footer a { color: rgba(255,255,255,0.25); text-decoration: none; }
+
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; }
+  .hero { padding: 60px 20px 50px; }
+  .como-section, .entrega-section { padding: 56px 20px; }
+  .para-quem { padding: 56px 20px; }
+  .form-section { padding: 56px 20px; }
+  .form-card { padding: 28px 20px; }
+  .entrega-box { grid-template-columns: 1fr; }
+  .passos::before { display: none; }
+  .grid-2 { grid-template-columns: 1fr; }
+  footer { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV MINIMALISTA -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="data:image/png;base64,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" style="width:28px;height:auto;">
+    MPF <span>Advocacia</span>
+  </a>
+  <a class="nav-voltar" href="civil.html">← Voltar aos serviços</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">⚡ Resposta em até 24 horas</div>
+  <h1>Tem um problema jurídico<br>e não sabe <em>se vale a pena agir?</em></h1>
+  <p class="hero-sub">Envie os documentos, descreva o caso e receba um parecer claro e objetivo — sem compromisso de contratação e sem juridiquês.</p>
+  <div class="hero-prazo">
+    📄 Parecer por escrito &nbsp;·&nbsp; <strong>Resposta em até 24h úteis</strong> &nbsp;·&nbsp; 100% online
+  </div>
+</div>
+
+<!-- COMO FUNCIONA -->
+<div class="como-section">
+  <div class="section-tag">Como funciona</div>
+  <div class="section-titulo">Simples e sem burocracia</div>
+  <div class="passos">
+    <div class="passo">
+      <div class="passo-num">1</div>
+      <div class="passo-titulo">Preencha o formulário</div>
+      <div class="passo-desc">Descreva o problema e envie os documentos relevantes. Quanto mais detalhe, mais precisa é a análise.</div>
+    </div>
+    <div class="passo">
+      <div class="passo-num">2</div>
+      <div class="passo-titulo">Efetue o pagamento</div>
+      <div class="passo-desc">Pagamento via Pix antes da análise. Simples, rápido e sem cadastro em plataforma.</div>
+    </div>
+    <div class="passo">
+      <div class="passo-num">3</div>
+      <div class="passo-titulo">Receba o parecer</div>
+      <div class="passo-desc">Em até 24 horas úteis (dias úteis, segunda a sexta) você recebe por e-mail um documento claro com a análise do seu caso.</div>
+    </div>
+    <div class="passo">
+      <div class="passo-num">4</div>
+      <div class="passo-titulo">Decida com segurança</div>
+      <div class="passo-desc">Com o parecer em mãos, você decide se quer prosseguir — com a MPF Advocacia ou com outro profissional.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PARA QUEM -->
+<div class="para-quem">
+  <div class="para-quem-inner">
+    <div class="section-tag">Para quem é esse serviço</div>
+    <div class="section-titulo">Se você está nessa situação, faz sentido para você</div>
+    <div class="casos-grid">
+      <div class="caso-item">
+        <div class="caso-icone">🏠</div>
+        <div class="caso-texto">
+          <strong>Compra ou venda de imóvel</strong>
+          Está prestes a assinar um contrato e quer saber se tem risco ou cláusula abusiva.
+        </div>
+      </div>
+      <div class="caso-item">
+        <div class="caso-icone">📱</div>
+        <div class="caso-texto">
+          <strong>Conta bloqueada ou golpe digital</strong>
+          Sofreu golpe via Pix ou teve conta bloqueada e quer saber se tem como reverter.
+        </div>
+      </div>
+      <div class="caso-item">
+        <div class="caso-icone">💰</div>
+        <div class="caso-texto">
+          <strong>Dívida ou cobrança indevida</strong>
+          Está sendo cobrado por algo que questiona ou tem um valor a receber e não sabe como agir.
+        </div>
+      </div>
+      <div class="caso-item">
+        <div class="caso-icone">📋</div>
+        <div class="caso-texto">
+          <strong>Contrato em disputa</strong>
+          A outra parte não cumpriu o que foi acordado e você quer saber quais são seus direitos.
+        </div>
+      </div>
+      <div class="caso-item">
+        <div class="caso-icone">🔒</div>
+        <div class="caso-texto">
+          <strong>Salário ou conta bloqueados</strong>
+          Teve valores bloqueados judicialmente e quer saber se o bloqueio foi correto.
+        </div>
+      </div>
+      <div class="caso-item">
+        <div class="caso-icone">⚖️</div>
+        <div class="caso-texto">
+          <strong>Qualquer outra situação civil ou imobiliária</strong>
+          Tem um problema jurídico, não sabe se tem caso e não quer gastar em consulta sem saber o que vai receber.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- O QUE VOCÊ RECEBE -->
+<div class="entrega-section">
+  <div class="section-tag" style="text-align:center;margin-bottom:12px;">O que você recebe</div>
+  <div class="section-titulo">Um documento claro, não um textão jurídico</div>
+  <div class="entrega-box">
+    <ul class="entrega-lista">
+      <li>Análise jurídica do seu caso com base nos documentos enviados</li>
+      <li>Conclusão objetiva: tem ou não tem fundamento para agir</li>
+      <li>Indicação do caminho recomendado — judicial ou extrajudicial</li>
+      <li>Estimativa de prazo e custo para a próxima etapa</li>
+      <li>Linguagem acessível — sem termos técnicos desnecessários</li>
+      <li>Documento por escrito, enviado por e-mail em até 24h úteis</li>
+    </ul>
+    <div class="entrega-preco">
+      <div class="entrega-preco-label">Investimento</div>
+      <div class="entrega-preco-valor"><sup>R$</sup>199</div>
+      <div class="entrega-preco-obs">Pagamento via Pix antes da análise. Após confirmação do pagamento, você receberá a confirmação do prazo de entrega.<br>Valor deduzido caso decida contratar o serviço completo.</div>
+      <a class="btn-contratar" href="#formulario">Solicitar análise agora</a>
+      <div class="btn-obs">Sem taxa de cancelamento · Sem compromisso de contratação</div>
+    </div>
+  </div>
+</div>
+
+<!-- FORMULÁRIO -->
+<div class="form-section" id="formulario">
+  <div class="form-container">
+    <div class="form-header">
+      <h2>Solicite sua análise</h2>
+      <p>Preencha com o máximo de detalhes possível. Quanto mais informação você fornecer, mais precisa será a análise.</p>
+    </div>
+    <div class="form-card">
+      <form action="https://formspree.io/f/xkoaoljq" method="POST">
+        <input type="hidden" name="servico" value="Triagem Jurídica Express">
+        <div class="grid-2">
+          <div class="field">
+            <label>Nome completo <span style="color:#C9A84C">*</span></label>
+            <input type="text" name="nome" placeholder="Seu nome" required>
+          </div>
+          <div class="field">
+            <label>WhatsApp <span style="color:#C9A84C">*</span></label>
+            <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" required>
+          </div>
+        </div>
+        <div class="field">
+          <label>E-mail <span style="color:#C9A84C">*</span></label>
+          <input type="email" name="email" placeholder="seu@email.com" required>
+        </div>
+        <div class="field">
+          <label>Descreva sua situação em detalhes <span style="color:#C9A84C">*</span></label>
+          <textarea name="descricao" placeholder="O que aconteceu, quando aconteceu, quem são as partes envolvidas, o que você já tentou fazer..." required></textarea>
+        </div>
+        <div class="field">
+          <label>Qual é o resultado que você espera?</label>
+          <input type="text" name="expectativa" placeholder="Ex: recuperar o valor pago, cancelar o contrato, desbloquear a conta...">
+        </div>
+        <p class="privacy-txt">As informações fornecidas destinam-se exclusivamente à triagem do atendimento e contato inicial, observada a legislação de proteção de dados aplicável. O preenchimento deste formulário não implica contratação de serviços advocatícios nem estabelece relação advogado-cliente. Após o recebimento do formulário, você receberá os dados para pagamento via Pix.</p>
+        <button type="submit" class="btn-enviar">Enviar e aguardar instruções de pagamento</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <a href="mailto:drmfialho@gmail.com">drmfialho@gmail.com</a>
+    &nbsp;·&nbsp; Marcello Paravani Fialho — OAB/SP nº 339.290
+    &nbsp;·&nbsp; © 2026 MPF Advocacia
+    &nbsp;·&nbsp; <a href="politica-de-privacidade.html">Política de Privacidade</a>
+    &nbsp;·&nbsp; <a href="index.html">Página inicial</a>
+  </p>
+</footer>
+
+</body>
+</html>
