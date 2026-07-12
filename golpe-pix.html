@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Caiu em um golpe via Pix? Entenda quando pode haver responsabilidade do banco, como funciona o MED 2.0 e quais providências tomar.">
+<title>Golpe via Pix: quando o banco pode ser responsabilizado e como funciona o MED 2.0 — MPF Advocacia</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TYG3H7S25Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TYG3H7S25Z');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --azul: #004A95; --azul-escuro: #002F5F; --dourado: #C9A84C;
+  --off-white: #F7F5F0; --cinza: #6B7280; --cinza-claro: #E2E2E2;
+  --texto: #1C1C1E; --branco: #FFFFFF;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Lato', sans-serif; background: var(--off-white); color: var(--texto); }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 60px; display: flex; align-items: center; justify-content: space-between;
+  background: #ffffff; border-bottom: 2px solid #C9A84C; box-shadow: 0 2px 20px rgba(0,47,95,0.08);
+}
+.nav-left { display: flex; align-items: center; gap: 40px; }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: #002F5F; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.nav-logo span { color: #C9A84C; }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a { font-size: 0.85rem; color: #002F5F; text-decoration: none; letter-spacing: 0.04em; font-family: 'Lato', sans-serif; font-weight: 600; transition: color 0.2s; }
+.nav-links a:hover { color: #C9A84C; }
+.nav-cta { font-size: 0.78rem; color: #ffffff; background: #002F5F; padding: 10px 22px; border-radius: 3px; text-decoration: none; letter-spacing: 0.05em; font-weight: 700; border-bottom: 2px solid #C9A84C; }
+.nav-cta:hover { background: #004A95; }
+
+.artigo-hero { background: var(--azul-escuro); padding: 120px 60px 60px; text-align: center; position: relative; overflow: hidden; }
+.artigo-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px); background-size: 60px 60px; }
+.artigo-tag { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dourado); margin-bottom: 14px; position: relative; }
+.artigo-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; color: var(--branco); position: relative; max-width: 800px; margin: 0 auto 14px; line-height: 1.2; }
+.artigo-meta { font-size: 0.75rem; color: rgba(255,255,255,0.4); letter-spacing: 0.06em; position: relative; }
+
+.artigo-container { max-width: 760px; margin: 0 auto; padding: 60px 40px 80px; }
+.artigo-intro { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; color: var(--azul-escuro); line-height: 1.7; margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--cinza-claro); }
+
+.artigo-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 500; color: var(--azul-escuro); margin: 40px 0 14px; line-height: 1.3; }
+.artigo-body h2::before { content: ''; display: block; width: 36px; height: 3px; background: var(--dourado); margin-bottom: 10px; }
+.artigo-body p { font-size: 0.95rem; color: var(--texto); line-height: 1.9; margin-bottom: 18px; font-weight: 300; }
+.artigo-body strong { font-weight: 700; color: var(--azul-escuro); }
+
+.destaque { background: var(--branco); border-left: 4px solid var(--dourado); padding: 20px 24px; margin: 32px 0; border-radius: 0 4px 4px 0; }
+.destaque p { margin: 0; font-size: 0.92rem; }
+
+.artigo-body ul { margin: 14px 0 20px 0; padding-left: 0; list-style: none; }
+.artigo-body ul li { font-size: 0.95rem; color: var(--texto); line-height: 1.8; font-weight: 300; padding: 6px 0 6px 20px; position: relative; }
+.artigo-body ul li::before { content: '→'; color: var(--dourado); position: absolute; left: 0; font-weight: 700; }
+
+.cta-artigo { background: var(--azul-escuro); padding: 40px 36px; border-radius: 4px; margin-top: 56px; text-align: center; }
+.cta-artigo h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--branco); margin-bottom: 10px; }
+.cta-artigo p { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-bottom: 22px; font-weight: 300; line-height: 1.7; }
+.btn-cta { display: inline-block; padding: 13px 28px; background: var(--dourado); color: var(--azul-escuro); font-family: 'Lato', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 3px; border-bottom: 3px solid rgba(0,0,0,0.15); }
+.btn-cta:hover { background: #e0bc5a; }
+
+.voltar-blog { text-align: center; margin-top: 32px; }
+.voltar-blog a { font-size: 0.78rem; color: var(--cinza); text-decoration: none; letter-spacing: 0.06em; }
+.voltar-blog a:hover { color: var(--dourado); }
+
+footer { background: var(--azul-escuro); padding: 28px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(201,168,76,0.2); margin-top: 40px; }
+footer p { font-size: 0.7rem; color: rgba(255,255,255,0.25); }
+footer a { font-size: 0.7rem; color: rgba(255,255,255,0.3); text-decoration: none; }
+footer a:hover { color: var(--dourado); }
+
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .artigo-hero { padding: 100px 20px 50px; }
+  .artigo-container { padding: 40px 20px 60px; }
+  footer { flex-direction: column; gap: 10px; padding: 24px 20px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a class="nav-logo" href="index.html"><img src="data:image/png;base64,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" style="width:30px;height:auto;vertical-align:middle;margin-right:10px;">MPF <span>Advocacia</span></a>
+    <div class="nav-links">
+      <a href="cliente.html">Imobiliário</a>
+      <a href="familia.html">Família</a>
+      <a href="civil.html">Civil</a>
+      <a href="blog.html">Blog</a>
+    </div>
+  </div>
+  <a class="nav-cta" href="index.html#contato">Falar com um advogado</a>
+</nav>
+
+<div class="artigo-hero">
+  <div class="artigo-tag">Direito Civil · Fraude Bancária</div>
+  <h1>Golpe via Pix: quando o banco pode ser responsabilizado e como funciona o MED 2.0</h1>
+  <div class="artigo-meta">MPF Advocacia · Julho de 2026 · 7 min de leitura</div>
+</div>
+
+<div class="artigo-container">
+
+  <div class="artigo-intro">
+    "O senhor autorizou a transferência, não há o que fazer." Se você já ouviu essa frase do seu banco depois de cair em um golpe via Pix, saiba que ela não encerra o assunto. A autorização formal da transferência, por si só, não afasta automaticamente a responsabilidade da instituição financeira — mas também não a garante. Depende de como o golpe aconteceu.
+  </div>
+
+  <div class="artigo-body">
+
+    <h2>O banco responde por um Pix que a própria vítima autorizou?</h2>
+    <p>É a dúvida mais comum de quem procura um advogado depois de um golpe: se eu mesmo fiz a transferência, mesmo que enganado, o banco tem alguma responsabilidade?</p>
+    <p>A resposta não é automática nem em um sentido, nem no outro. O <strong>Superior Tribunal de Justiça</strong> aplica, nesses casos, a <strong>Súmula 479</strong>: as instituições financeiras respondem objetivamente pelos danos causados por fraudes de terceiros praticadas no âmbito das operações bancárias — o chamado <strong>fortuito interno</strong>, um risco que a jurisprudência entende inerente à própria atividade bancária.</p>
+    <p>Mas essa responsabilidade objetiva não dispensa a análise do caso concreto. Os tribunais também reconhecem situações de <strong>culpa concorrente</strong> — quando a conduta da vítima contribuiu de forma relevante para o prejuízo — e até de exclusão total da responsabilidade do banco, quando o golpe se desenvolveu inteiramente fora do ambiente bancário, sem qualquer falha do sistema.</p>
+
+    <div class="destaque">
+      <p><strong>Em outras palavras:</strong> ter autorizado formalmente a transferência não encerra a análise. O que importa é como o golpe aconteceu, se houve falha de segurança do banco e se a operação destoava do perfil de uso do cliente.</p>
+    </div>
+
+    <h2>Situações que podem indicar falha bancária</h2>
+    <p>A jurisprudência tende a reconhecer a responsabilidade do banco quando o golpe explora diretamente a estrutura ou a marca da instituição, entre outras hipóteses:</p>
+    <ul>
+      <li><strong>Golpe da falsa central</strong> — o criminoso se passa por funcionário do banco, usando dados que deveriam estar protegidos</li>
+      <li><strong>Acesso remoto ao celular via aplicativo falso</strong> — quando o banco não bloqueia operações atípicas mesmo após comunicação da vítima</li>
+      <li><strong>Falha na abertura ou no controle de contas usadas por golpistas</strong> — quando há indícios concretos de deficiência no cadastro ou na movimentação</li>
+    </ul>
+    <p>Em nenhum desses casos a responsabilização é automática — ela depende de prova de defeito no serviço e do nexo entre essa falha e o prejuízo sofrido. Já quando a negociação começa e termina inteiramente fora do banco — por exemplo, uma venda combinada em rede social, sem qualquer falha de segurança do sistema bancário — os tribunais têm reconhecido que a responsabilidade pode ser afastada.</p>
+
+    <h2>O que mudou com o MED 2.0</h2>
+    <p>O <strong>Mecanismo Especial de Devolução (MED)</strong> é a ferramenta do Banco Central para tentar bloquear e devolver valores transferidos por Pix em casos de fraude. Até 2025, sua eficácia era limitada: o bloqueio alcançava apenas a primeira conta que recebia o dinheiro, e a taxa média de recuperação em 2025 foi de <strong>9,3% do valor contestado</strong>, segundo dados do próprio Banco Central — porque o golpista costuma pulverizar o valor entre várias contas em minutos.</p>
+    <p>A <strong>Resolução BCB nº 493/2025</strong>, com aplicação obrigatória desde <strong>2 de fevereiro de 2026</strong>, criou o MED 2.0: o rastreamento passa a alcançar contas subsequentes na cadeia de dispersão dos recursos, não apenas a primeira. Isso aumenta a chance prática de bloquear e recuperar o dinheiro antes que ele desapareça de vez.</p>
+    <p>Sobre prazos: o próprio Banco Central prevê, no fluxo operacional do MED, até <strong>7 dias</strong> para os bancos envolvidos analisarem a notificação de infração, e <strong>72 horas</strong> para o banco da vítima solicitar a devolução após o aceite. Isso reforça um ponto prático — quanto antes você comunicar o golpe ao seu banco, maior a janela útil para que o mecanismo funcione. O MED não garante a devolução: ela depende de ainda haver saldo localizável nas contas envolvidas.</p>
+
+    <h2>O que fazer imediatamente</h2>
+    <p>As primeiras horas depois de perceber o golpe são as que mais pesam no resultado. Recomendamos:</p>
+    <ul>
+      <li>Comunicar o banco imediatamente e solicitar a abertura do MED</li>
+      <li>Guardar o número de protocolo do atendimento</li>
+      <li>Registrar boletim de ocorrência, com o máximo de detalhes sobre como o golpe ocorreu</li>
+      <li>Preservar prints de conversas, comprovantes e telas do aplicativo</li>
+      <li>Contestar formalmente a operação junto ao banco, por escrito, e não apenas por telefone</li>
+    </ul>
+
+    <h2>E se o banco negar a devolução?</h2>
+    <p>A recusa administrativa não encerra o direito da vítima. Quando o MED não devolve o valor — ou o banco nega a existência de falha — ainda é possível buscar a via judicial, com base na Súmula 479 do STJ e no dever de segurança previsto no Código de Defesa do Consumidor. Nessa fase, o que decide o caso é a reconstrução de como o golpe aconteceu: quais falhas do banco podem ser demonstradas, se a operação era compatível com o perfil do cliente e quais provas foram preservadas.</p>
+
+  </div>
+
+  <div class="cta-artigo">
+    <h3>Foi vítima de um golpe via Pix?</h3>
+    <p>Cada caso depende da dinâmica da fraude e das provas disponíveis. Uma análise do seu caso ajuda a entender se há fundamento para reivindicar a devolução — administrativa ou judicialmente.</p>
+    <a class="btn-cta" href="index.html#contato">Solicitar análise jurídica</a>
+  </div>
+
+  <div class="voltar-blog">
+    <a href="blog.html">← Ver todos os artigos</a>
+  </div>
+
+</div>
+
+<footer>
+  <p><a href="mailto:drmfialho@gmail.com" style="color:rgba(255,255,255,0.3);text-decoration:none;">drmfialho@gmail.com</a> &nbsp;·&nbsp; Marcello Paravani Fialho — OAB/SP nº 339.290 &nbsp;·&nbsp; © 2026 MPF Advocacia &nbsp;·&nbsp; <a href="politica-de-privacidade.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Política de Privacidade</a></p>
+  <a href="index.html">← Página inicial</a>
+</footer>
+
+</body>
+</html>
